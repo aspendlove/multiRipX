@@ -44,7 +44,20 @@ func main() {
 		if err := ripper.RunJobs(appConfig, jobsConfig); err != nil {
 			log.Fatalf("Job execution failed: %v", err)
 		}
+	case "scan":
+		if len(args) < 2 {
+			log.Fatal("Usage: multiRip scan <drive_path>")
+		}
+		drive := args[1]
 
+		appConfig, err := config.LoadConfig()
+		if err != nil {
+			log.Fatalf("Failed to load app config: %v", err)
+		}
+
+		if err := ripper.ScanDrive(drive, appConfig.Handbrake.Binary); err != nil {
+			log.Fatalf("Scanning failed: %v", err)
+		}
 	default:
 		fmt.Printf("Unknown command: %s\n", command)
 		printUsage()
@@ -57,5 +70,6 @@ Commands:
   init         Create a default config file
   verify       Verify the configuration and paths
   run <path>   Execute rip jobs from a jobs file
+  scan <drive> Scan a drive to find the 'Play All' title
 `)
 }
