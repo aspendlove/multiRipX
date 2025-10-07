@@ -33,8 +33,11 @@ echo "Downloading MakeMKV $VERSION"
 wget --no-check-certificate "https://www.makemkv.com/download/makemkv-oss-${VERSION}.tar.gz"
 wget --no-check-certificate "https://www.makemkv.com/download/makemkv-bin-${VERSION}.tar.gz"
 
-tar -xzf makemkv-oss-${VERSION}.tar.gz
-tar -xzf makemkv-bin-${VERSION}.tar.gz
+gunzip "makemkv-oss-${VERSION}.tar.gz"
+gunzip -xzf "makemkv-bin-${VERSION}.tar.gz"
+
+tar -xzf "makemkv-oss-${VERSION}.tar"
+tar -xzf "makemkv-bin-${VERSION}.tar"
 
 echo "Building MakeMKV-OSS"
 pushd "makemkv-oss-${VERSION}"
