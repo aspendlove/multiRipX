@@ -1,7 +1,12 @@
 package config
 
 type HandbrakeConfig struct {
-	Binary     string `yaml:"binary"`
+	Binary string          `yaml:"binary"`
+	DVD    HandbrakePreset `yaml:"dvd"`
+	Bluray HandbrakePreset `yaml:"bluray"`
+}
+
+type HandbrakePreset struct {
 	Preset     string `yaml:"preset"`
 	PresetName string `yaml:"preset_name"`
 }
@@ -28,11 +33,19 @@ type Movie struct {
 	Title int    `yaml:"title"`
 }
 
+type DiscType string
+
+const (
+	DVD    DiscType = "dvd"
+	Bluray DiscType = "bluray"
+)
+
 type JobDefinition struct {
-	Drive     string  `yaml:"drive"`
-	OutputDir string  `yaml:"output_dir,omitempty"`
-	Shows     []Show  `yaml:"shows,omitempty"`
-	Movies    []Movie `yaml:"movies,omitempty"`
+	Drive     string   `yaml:"drive"`
+	DiscType  DiscType `yaml:"disc_type,omitempty"`
+	OutputDir string   `yaml:"output_dir,omitempty"`
+	Shows     []Show   `yaml:"shows,omitempty"`
+	Movies    []Movie  `yaml:"movies,omitempty"`
 }
 
 type JobsConfig struct {

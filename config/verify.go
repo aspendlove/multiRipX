@@ -33,12 +33,20 @@ func VerifyConfig() error {
 		fmt.Printf("  - Handbrake Binary: %s (OK)\n", cfg.Handbrake.Binary)
 	}
 
-	// Check preset file
-	if err := checkFile(cfg.Handbrake.Preset); err != nil {
-		fmt.Printf("  - Preset File: %s (Error: %v)\n", cfg.Handbrake.Preset, err)
+	// Check bluray preset file
+	if err := checkFile(cfg.Handbrake.Bluray.Preset); err != nil {
+		fmt.Printf("  - Preset File: %s (Error: %v)\n", cfg.Handbrake.Bluray.Preset, err)
 		valid = false
 	} else {
-		fmt.Printf("  - Preset File: %s (OK)\n", cfg.Handbrake.Preset)
+		fmt.Printf("  - Preset File: %s (OK)\n", cfg.Handbrake.Bluray.Preset)
+	}
+	
+	// Check dvd preset file
+	if err := checkFile(cfg.Handbrake.DVD.Preset); err != nil {
+		fmt.Printf("  - Preset File: %s (Error: %v)\n", cfg.Handbrake.DVD.Preset, err)
+		valid = false
+	} else {
+		fmt.Printf("  - Preset File: %s (OK)\n", cfg.Handbrake.DVD.Preset)
 	}
 
 	if !valid {

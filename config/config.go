@@ -34,13 +34,19 @@ func InitializeConfig() error {
 
 	defaultConfig := Config{
 		Handbrake: HandbrakeConfig{
-			Binary:     "/path/to/HandBrakeCLI",
-			Preset:     "/path/to/presets.json",
-			PresetName: "My_Preset",
+			Binary: "/path/to/HandBrakeCLI",
+			DVD: HandbrakePreset{
+				Preset:     "/path/to/dvd-presets.json",
+				PresetName: "My_DVD_Preset",
+			},
+			Bluray: HandbrakePreset{
+				Preset:     "/path/to/bluray-presets.json",
+				PresetName: "My_Bluray_Preset",
+			},
 		},
 		Output: OutputConfig{
-			ShowsFilenameTemplate:  "{title}_S{season:02}E{episode:02}",
-			MoviesFilenameTemplate: "{title}",
+			ShowsFilenameTemplate:  "S{season}E{episode} - {name}",
+			MoviesFilenameTemplate: "{Name}",
 		},
 	}
 
@@ -92,6 +98,12 @@ func LoadJobs(path string) (*JobsConfig, error) {
 	var jobsCfg JobsConfig
 	if err := yaml.Unmarshal(data, &jobsCfg); err != nil {
 		return nil, fmt.Errorf("could not parse jobs file: %w", err)
+	}
+
+	for i := range jobsCfg.Jobs {
+		if jobsCfg.Jobs[i].DiscType == "" {
+			jobsCfg.Jobs[i].DiscType = DVD
+		}
 	}
 
 	return &jobsCfg, nil

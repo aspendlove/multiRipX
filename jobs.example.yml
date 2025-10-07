@@ -2,6 +2,7 @@ output_dir: /home/example/Videos/
 
 jobs:
   - drive: /dev/sr0
+    disc_type: dvd # This can be omitted, as it defaults to dvd
     shows:
       - name: "Show"
         season: 1
@@ -16,6 +17,7 @@ jobs:
         episode: 3
         title: 3
   - drive: /dev/sr1
+    disc_type: bluray # Important for bluray rips
     output_dir: /home/example/Movies
     movies:
       - name: "Movie"

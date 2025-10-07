@@ -1,6 +1,7 @@
 package ripper
 
 import (
+	"fmt"
 	"log/slog"
 	"multiRip/config"
 	"multiRip/util"
@@ -11,11 +12,13 @@ import (
 	"sync"
 )
 
+type JobExec func(*os.File) error
+
 type Job struct {
 	ID     int
 	Name   string
 	Device string
-	Cmd    *exec.Cmd
+	Cmd    JobExec
 }
 
 var logger = slog.New(slog.NewTextHandler(os.Stdout, nil))
@@ -44,7 +47,11 @@ func RunJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) error {
 			}
 			outputPath := filepath.Join(outputDir, filename+".mkv")
 
-			cmd := makeRip(driveJob.Drive, outputPath, appConfig.Handbrake.Preset, appConfig.Handbrake.PresetName, appConfig.Handbrake.Binary, show.Title)
+			cmd, err := makeRip(driveJob.Drive, outputPath, appConfig, show.Title, driveJob.DiscType)
+			if err != nil {
+				logger.Error("Could not generate job, skipping", "error", err)
+				continue
+			}
 			jobs[driveJob.Drive] = append(jobs[driveJob.Drive], Job{
 				ID:     show.Title,
 				Name:   filename,
@@ -66,7 +73,11 @@ func RunJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) error {
 			}
 			outputPath := filepath.Join(outputDir, filename+".mkv")
 
-			cmd := makeRip(driveJob.Drive, outputPath, appConfig.Handbrake.Preset, appConfig.Handbrake.PresetName, appConfig.Handbrake.Binary, movie.Title)
+			cmd, err := makeRip(driveJob.Drive, outputPath, appConfig, movie.Title, driveJob.DiscType)
+			if err != nil {
+				logger.Error("Could not generate job, skipping", "error", err)
+				continue
+			}
 			jobs[driveJob.Drive] = append(jobs[driveJob.Drive], Job{
 				ID:     movie.Title,
 				Name:   filename,
@@ -98,10 +109,8 @@ func RunJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) error {
 
 			for _, job := range jobs {
 				logger.Info("Worker started job", "device", device, "job_id", job.ID, "name", job.Name)
-				job.Cmd.Stdout = logFile
-				job.Cmd.Stderr = logFile
 
-				if err := job.Cmd.Run(); err != nil {
+				if err := job.Cmd(logFile); err != nil {
 					logger.Error("Error while transcoding", "device", device, "job_id", job.ID, "error", err)
 					continue
 				}
@@ -116,14 +125,69 @@ func RunJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) error {
 	return nil
 }
 
-func makeRip(device, filename, presetFile, presetName, binary string, title int) *exec.Cmd {
+func makeRip(device, filename string, appConfig *config.Config, title int, diskType config.DiscType) (JobExec, error) {
+	switch diskType {
+	case config.DVD:
+		return makeDvdRip(device, filename, appConfig, title), nil
+	case config.Bluray:
+		return makeBlurayRip(device, filename, appConfig, title), nil
+	}
+	return nil, fmt.Errorf("Invalid Disk Type")
+}
+
+func makeDvdRip(device, filename string, appConfig *config.Config, title int) JobExec {
 	args := []string{
-		"--preset-import-file", presetFile,
-		"--preset", presetName,
+		"--preset-import-file", appConfig.Handbrake.DVD.Preset,
+		"--preset", appConfig.Handbrake.DVD.PresetName,
 		"-i", device,
 		"-t", strconv.Itoa(title),
 		"-o", filename,
 	}
 
-	return exec.Command(binary, args...)
+	var command JobExec = func(file *os.File) error {
+		cmd := exec.Command(appConfig.Handbrake.Binary, args...)
+		cmd.Stdout = file
+		cmd.Stderr = file
+		return cmd.Run()
+	}
+
+	return command
+}
+
+func makeBlurayRip(device, filename string, appConfig *config.Config, title int) JobExec {
+	var command JobExec = func(file *os.File) error {
+		tempDir, err := os.MkdirTemp("", "multirip_bluray_*")
+		if err != nil {
+			return fmt.Errorf("Cannot create temporary directory")
+		}
+		defer os.RemoveAll(tempDir)
+		args := []string{
+			"mkv",
+			"dev:" + device,
+			strconv.Itoa(title),
+			tempDir,
+		}
+		ripCmd := exec.Command("makemkvcon", args...)
+		args = []string{
+			"--preset-import-file", appConfig.Handbrake.Bluray.Preset,
+			"--preset", appConfig.Handbrake.Bluray.PresetName,
+			"-i", filepath.Join(tempDir, "temp.mkv"),
+			"-o", filename,
+		}
+		transcodeCmd := exec.Command(appConfig.Handbrake.Binary, args...)
+		ripCmd.Stdout = file
+		ripCmd.Stderr = file
+		transcodeCmd.Stdout = file
+		transcodeCmd.Stderr = file
+		err = ripCmd.Run()
+		if err != nil {
+			return fmt.Errorf("Cannot Rip BluRay: %w", err)
+		}
+		err = transcodeCmd.Run()
+		if err != nil {
+			return fmt.Errorf("Cannot Transcode BluRay: %w", err)
+		}
+		return nil
+	}
+	return command
 }
