@@ -17,15 +17,15 @@ type Config struct {
 }
 
 type Show struct {
-	Title       string `yaml:"title"`
-	Season      int    `yaml:"season"`
-	Episode     int    `yaml:"episode"`
-	TrackNumber int    `yaml:"track_number"`
+	Name    string `yaml:"name"`
+	Season  int    `yaml:"season"`
+	Episode int    `yaml:"episode"`
+	Title   int    `yaml:"title"`
 }
 
 type Movie struct {
-	Title       string `yaml:"title"`
-	TrackNumber int    `yaml:"track_number"`
+	Name  string `yaml:"name"`
+	Title int    `yaml:"title"`
 }
 
 type JobDefinition struct {
