@@ -45,8 +45,8 @@ func InitializeConfig() error {
 			},
 		},
 		Output: OutputConfig{
-			ShowsFilenameTemplate:  "S{season}E{episode} - {name}",
-			MoviesFilenameTemplate: "{Name}",
+			ShowsFilenameTemplate:  "S{season}E{episode} - {title}",
+			MoviesFilenameTemplate: "{title}",
 		},
 	}
 
