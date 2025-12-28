@@ -39,7 +39,11 @@ func (a *App) startup(ctx context.Context) {
 
 		for scanner.Scan() {
 			line := scanner.Text()
-			runtime.EventsEmit(a.ctx, "global-log", line+"\n")
+
+			runtime.EventsEmit(a.ctx, "log-update", map[string]string{
+				"driveId": "global",
+				"message": line + "\n",
+			})
 		}
 	}()
 }

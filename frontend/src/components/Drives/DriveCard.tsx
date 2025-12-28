@@ -45,7 +45,7 @@ export default function DriveCard({
           )}
         </CardContent>
         <CardFooter>
-          <Button variant="default" onClick={onEject}>
+          <Button variant="default" onClick={onEject} disabled={drive.running}>
             <StepForward className="rotate-270" />
             Eject Disc
           </Button>
