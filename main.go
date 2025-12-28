@@ -18,16 +18,19 @@ var assets embed.FS
 
 func main() {
 	startGui := func() {
-		app := NewApp()
+		appConfig, err := config.LoadConfig()
+		if err != nil {
+			return
+		}
+		app := NewApp(appConfig)
 
-		err := wails.Run(&options.App{
+		err = wails.Run(&options.App{
 			Title:  "MultiRip",
 			Width:  1024,
 			Height: 768,
 			AssetServer: &assetserver.Options{
 				Assets: assets,
 			},
-			// BackgroundColour: &options.RGBA{R: 27, G: 38, B: 54, A: 1},
 			OnStartup: app.startup,
 			Bind: []any{
 				app,

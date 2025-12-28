@@ -1,7 +1,9 @@
 package ripper
 
 import (
+	"bufio"
 	"fmt"
+	"io"
 	"log/slog"
 	"multiRip/config"
 	"multiRip/util"
@@ -24,6 +26,19 @@ type Job struct {
 var logger = slog.New(slog.NewTextHandler(os.Stdout, nil))
 
 func RunJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) error {
+	jobs, err := GetJobs(appConfig, jobsConfig)
+	if err != nil {
+		return err
+	}
+	if err = ExecuteJobs(jobs, nil); err != nil {
+		return err
+	}
+
+	logger.Info("All jobs completed.")
+	return nil
+}
+
+func GetJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) (map[string][]Job, error) {
 	jobs := make(map[string][]Job)
 
 	for _, driveJob := range jobsConfig.Jobs {
@@ -89,11 +104,16 @@ func RunJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) error {
 
 	if len(jobs) == 0 {
 		logger.Warn("No jobs found to process.")
-		return nil
+		return nil, nil
 	}
 
+	return jobs, nil
+}
+
+func ExecuteJobs(jobs map[string][]Job, onLog func(driveId, message string)) error {
 	var workerGroup sync.WaitGroup
 	workerGroup.Add(len(jobs))
+	var jobError error = nil
 
 	for device, jobList := range jobs {
 		go func(device string, jobs []Job, wg *sync.WaitGroup) {
@@ -103,26 +123,47 @@ func RunJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) error {
 			logFile, err := os.Create(logFilename)
 			if err != nil {
 				logger.Error("Error creating log file", "file", logFilename, "error", err)
+				jobError = fmt.Errorf("Error creating log file")
 				return
 			}
 			defer logFile.Close()
 
+			pr, pw, _ := os.Pipe()
+
+			logFinished := make(chan bool)
+
+			go func() {
+				tee := io.TeeReader(pr, logFile)
+
+				scanner := bufio.NewScanner(tee)
+				for scanner.Scan() {
+					if onLog != nil {
+						onLog(device, scanner.Text()+"\n")
+					}
+				}
+			}()
+
 			for _, job := range jobs {
 				logger.Info("Worker started job", "device", device, "job_id", job.ID, "name", job.Name)
 
-				if err := job.Cmd(logFile); err != nil {
+				if err := job.Cmd(pw); err != nil {
 					logger.Error("Error while transcoding", "device", device, "job_id", job.ID, "error", err)
+					jobError = fmt.Errorf("Error while transcoding")
 					continue
 				}
 
 				logger.Info("Worker finished job", "device", device, "job_id", job.ID)
 			}
+
+			pw.Close()
+
+			<-logFinished
+			pr.Close()
 		}(device, jobList, &workerGroup)
 	}
 
 	workerGroup.Wait()
-	logger.Info("All jobs completed.")
-	return nil
+	return jobError
 }
 
 func makeRip(device, filename string, appConfig *config.Config, title int, diskType config.DiscType) (JobExec, error) {
