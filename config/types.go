@@ -16,9 +16,14 @@ type OutputConfig struct {
 	MoviesFilenameTemplate string `yaml:"movies_filename_template"`
 }
 
+type MakeMKVConfig struct {
+	ScratchDir string `yaml:"scratch_dir"`
+}
+
 type Config struct {
 	Handbrake HandbrakeConfig `yaml:"handbrake"`
 	Output    OutputConfig    `yaml:"output"`
+	MakeMKV   MakeMKVConfig   `yaml:"makemkv"`
 }
 
 type Show struct {

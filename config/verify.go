@@ -40,13 +40,23 @@ func VerifyConfig() error {
 	} else {
 		fmt.Printf("  - Preset File: %s (OK)\n", cfg.Handbrake.Bluray.Preset)
 	}
-	
+
 	// Check dvd preset file
 	if err := checkFile(cfg.Handbrake.DVD.Preset); err != nil {
 		fmt.Printf("  - Preset File: %s (Error: %v)\n", cfg.Handbrake.DVD.Preset, err)
 		valid = false
 	} else {
 		fmt.Printf("  - Preset File: %s (OK)\n", cfg.Handbrake.DVD.Preset)
+	}
+
+	// Check scratch directory
+	if cfg.MakeMKV.ScratchDir != "" {
+		if err := checkDirectory(cfg.MakeMKV.ScratchDir); err != nil {
+			fmt.Printf("  - Scratch Directory: %s (Error: %v)\n", cfg.MakeMKV.ScratchDir, err)
+			valid = false
+		} else {
+			fmt.Printf("  - Scratch Directory: %s (OK)\n", cfg.MakeMKV.ScratchDir)
+		}
 	}
 
 	if !valid {
@@ -90,4 +100,18 @@ func checkExecutable(path string) error {
 	}
 
 	return nil // Found in PATH.
+}
+
+func checkDirectory(path string) error {
+	info, err := os.Stat(path)
+	if os.IsNotExist(err) {
+		return fmt.Errorf("directory does not exist")
+	}
+	if err != nil {
+		return fmt.Errorf("could not stat path: %w", err)
+	}
+	if !info.IsDir() {
+		return fmt.Errorf("path is a file, not a directory")
+	}
+	return nil
 }

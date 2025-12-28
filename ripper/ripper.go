@@ -156,9 +156,9 @@ func makeDvdRip(device, filename string, appConfig *config.Config, title int) Jo
 
 func makeBlurayRip(device, filename string, appConfig *config.Config, title int) JobExec {
 	var command JobExec = func(file *os.File) error {
-		tempDir, err := os.MkdirTemp("", "multirip_bluray_*")
+		tempDir, err := os.MkdirTemp(appConfig.MakeMKV.ScratchDir, "multirip_bluray_*")
 		if err != nil {
-			return fmt.Errorf("Cannot create temporary directory")
+			return fmt.Errorf("Cannot create temporary directory: %w", err)
 		}
 		defer os.RemoveAll(tempDir)
 		args := []string{

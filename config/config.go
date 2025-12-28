@@ -48,6 +48,9 @@ func InitializeConfig() error {
 			ShowsFilenameTemplate:  "S{season}E{episode} - {title}",
 			MoviesFilenameTemplate: "{title}",
 		},
+		MakeMKV: MakeMKVConfig{
+			ScratchDir: "",
+		},
 	}
 
 	data, err := yaml.Marshal(&defaultConfig)
