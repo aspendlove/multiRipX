@@ -27,15 +27,15 @@ type Config struct {
 }
 
 type Show struct {
-	Name    string `yaml:"name"`
-	Season  int    `yaml:"season"`
-	Episode int    `yaml:"episode"`
-	Title   int    `yaml:"title"`
+	Name    string `yaml:"name"    json:"name"`
+	Season  int    `yaml:"season"  json:"season"`
+	Episode int    `yaml:"episode" json:"episode"`
+	Title   int    `yaml:"title"   json:"title"`
 }
 
 type Movie struct {
-	Name  string `yaml:"name"`
-	Title int    `yaml:"title"`
+	Name  string `yaml:"name"  json:"name"`
+	Title int    `yaml:"title" json:"title"`
 }
 
 type DiscType string
@@ -46,14 +46,14 @@ const (
 )
 
 type JobDefinition struct {
-	Drive     string   `yaml:"drive"`
-	DiscType  DiscType `yaml:"disc_type,omitempty"`
-	OutputDir string   `yaml:"output_dir,omitempty"`
-	Shows     []Show   `yaml:"shows,omitempty"`
-	Movies    []Movie  `yaml:"movies,omitempty"`
+	Drive     string        `yaml:"drive"                json:"drive"`
+	DiscType  DiscType      `yaml:"disc_type,omitempty"  json:"discType"`
+	OutputDir string        `yaml:"output_dir,omitempty" json:"outputDir"`
+	Shows     []Show        `yaml:"shows,omitempty"      json:"shows"`
+	Movies    []Movie       `yaml:"movies,omitempty"     json:"movies"`
 }
 
 type JobsConfig struct {
-	OutputDir string          `yaml:"output_dir"`
-	Jobs      []JobDefinition `yaml:"jobs"`
+	OutputDir string          `yaml:"output_dir" json:"outputDir"`
+	Jobs      []JobDefinition `yaml:"jobs"       json:"jobs"`
 }

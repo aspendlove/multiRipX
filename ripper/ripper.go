@@ -1,9 +1,7 @@
 package ripper
 
 import (
-	"bufio"
 	"fmt"
-	"io"
 	"log/slog"
 	"multiRip/config"
 	"multiRip/util"
@@ -123,40 +121,55 @@ func ExecuteJobs(jobs map[string][]Job, onLog func(driveId, message string)) err
 			logFile, err := os.Create(logFilename)
 			if err != nil {
 				logger.Error("Error creating log file", "file", logFilename, "error", err)
-				jobError = fmt.Errorf("Error creating log file")
+				jobError = fmt.Errorf("error creating log file for %s", device)
 				return
 			}
 			defer logFile.Close()
 
 			pr, pw, _ := os.Pipe()
-
 			logFinished := make(chan bool)
 
+			// The "Raw Chunk" Interceptor
 			go func() {
-				tee := io.TeeReader(pr, logFile)
+				// Use a buffer for reading. 4096 is standard.
+				buf := make([]byte, 4096)
+				for {
+					n, err := pr.Read(buf)
+					if n > 0 {
+						// 1. Write exactly what we read to the log file
+						logFile.Write(buf[:n])
 
-				scanner := bufio.NewScanner(tee)
-				for scanner.Scan() {
-					if onLog != nil {
-						onLog(device, scanner.Text()+"\n")
+						// 2. Send the raw string chunk to Wails/xterm.js
+						// This includes the \r that xterm needs for progress bars!
+						if onLog != nil {
+							onLog(device, string(buf[:n]))
+						}
+					}
+					if err != nil {
+						// EOF reached when pw.Close() is called
+						break
 					}
 				}
+				logFinished <- true
 			}()
 
 			for _, job := range jobs {
 				logger.Info("Worker started job", "device", device, "job_id", job.ID, "name", job.Name)
 
+				// Handbrake/MakeMKV write raw ANSI codes to the pipe here
 				if err := job.Cmd(pw); err != nil {
 					logger.Error("Error while transcoding", "device", device, "job_id", job.ID, "error", err)
-					jobError = fmt.Errorf("Error while transcoding")
+					jobError = fmt.Errorf("transcoding failed on %s", device)
 					continue
 				}
 
 				logger.Info("Worker finished job", "device", device, "job_id", job.ID)
 			}
 
+			// Closing the writer triggers EOF in the reading goroutine
 			pw.Close()
 
+			// Wait for the reading goroutine to finish flushing the last bytes
 			<-logFinished
 			pr.Close()
 		}(device, jobList, &workerGroup)
@@ -165,7 +178,6 @@ func ExecuteJobs(jobs map[string][]Job, onLog func(driveId, message string)) err
 	workerGroup.Wait()
 	return jobError
 }
-
 func makeRip(device, filename string, appConfig *config.Config, title int, diskType config.DiscType) (JobExec, error) {
 	switch diskType {
 	case config.DVD:

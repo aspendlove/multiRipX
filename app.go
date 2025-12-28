@@ -8,6 +8,7 @@ import (
 	"multiRip/config"
 	"multiRip/ripper"
 	"os"
+	"os/exec"
 
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
@@ -75,4 +76,38 @@ func (a *App) RunRipper(jobsFile string) error {
 		runtime.EventsEmit(a.ctx, "jobs-complete", true)
 	}()
 	return nil
+}
+
+func (a *App) EjectDrive(device string) error {
+	fmt.Printf("Ejecting drive: %s\n", device)
+	cmd := exec.Command("eject", device)
+	return cmd.Run()
+}
+
+func (a *App) GetDrives() ([]string, error) {
+	drives := []string{}
+	files, _ := os.ReadDir("/dev")
+	for _, f := range files {
+		if len(f.Name()) >= 2 && f.Name()[:2] == "sr" {
+			drives = append(drives, "/dev/"+f.Name())
+		}
+	}
+	return drives, nil
+}
+
+func (a *App) OpenFile() (string, error) {
+	fileFilters := []runtime.FileFilter{
+		{
+			DisplayName: "Yaml",
+			Pattern:     "*.yaml;*.yml",
+		},
+	}
+
+	return runtime.OpenFileDialog(a.ctx, runtime.OpenDialogOptions{
+		Filters: fileFilters,
+	})
+}
+
+func (a *App) GetCurrentJobs(filePath string) (*config.JobsConfig, error) {
+	return config.LoadJobs(filePath)
 }

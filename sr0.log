@@ -1,0 +1,662 @@
+[03:10:24] Compile-time hardening features are enabled
+[03:10:24] nvenc: version 13.0 is available
+[03:10:24] nvdec: is available
+[03:10:24] CUDA Version: 7.5
+[03:10:24] qsv: not available on this system
+[03:10:24] hb_init: starting libhb thread
+[03:10:24] thread 7f9ce71ff6c0 started ("libhb")
+HandBrake 20240621000000-e9ff2bd-unknown (2025092901) - Linux x86_64 - https://handbrake.fr
+16 CPUs detected
+Opening /dev/sr0...
+[03:10:24] CPU: AMD Ryzen 7 3700X 8-Core Processor
+[03:10:24]  - logical processor count: 16
+[03:10:24] Intel Quick Sync Video support: no
+[03:10:24] hb_scan: path=/dev/sr0, title_index=1
+disc.c:437: error opening file BDMV/index.bdmv
+disc.c:437: error opening file BDMV/BACKUP/index.bdmv
+[03:10:24] bd: not a bd - trying as a stream/file instead
+[03:10:24] dvd: Region mask 0xfe
+[03:10:24] scan: DVD has 17 title(s)
+[03:10:24] scan: scanning title 1
+[03:10:24] scan: duration is 00:21:57 (1317734 ms)
+[03:10:24] pgc_id: 1, pgn: 1: pgc: 0x7f9cd803cb60
+[03:10:24] scan: checking audio 1
+[03:10:24] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=1
+[03:10:24] scan: checking audio 2
+[03:10:24] scan: id=0x81bd, lang=español (AC3), 3cc=spa ext=1
+[03:10:24] scan: checking audio 3
+[03:10:24] scan: id=0x82bd, lang=Francais (AC3), 3cc=fra ext=1
+[03:10:24] scan: checking audio 4
+[03:10:24] scan: audio channel is not active
+[03:10:24] scan: checking subtitle 1
+[03:10:24] scan: id=0x20bd, lang=English Closed Caption (Wide Screen) [VOBSUB], 3cc=eng ext=5
+[03:10:24] scan: id=0x21bd, lang=English Closed Caption (Letterbox) [VOBSUB], 3cc=eng ext=5
+[03:10:24] scan: checking subtitle 2
+[03:10:24] scan: id=0x22bd, lang=español (Wide Screen) [VOBSUB], 3cc=spa ext=1
+[03:10:24] scan: id=0x23bd, lang=español (Letterbox) [VOBSUB], 3cc=spa ext=1
+[03:10:24] scan: checking subtitle 3
+[03:10:24] scan: id=0x24bd, lang=español (Wide Screen) [VOBSUB], 3cc=spa ext=1
+[03:10:24] scan: id=0x25bd, lang=español (Letterbox) [VOBSUB], 3cc=spa ext=1
+[03:10:24] scan: checking subtitle 4
+[03:10:24] scan: id=0x26bd, lang=Francais (Wide Screen) [VOBSUB], 3cc=fra ext=1
+[03:10:24] scan: id=0x27bd, lang=Francais (Letterbox) [VOBSUB], 3cc=fra ext=1
+[03:10:24] scan: title 1 has 6 chapters
+[03:10:24] scan: chap 1, 19000 ms
+[03:10:24] scan: chap 2, 514500 ms
+[03:10:24] scan: chap 3, 469667 ms
+[03:10:24] scan: chap 4, 277333 ms
+[03:10:24] scan: chap 5, 36734 ms
+[03:10:24] scan: chap 6, 500 ms
+[03:10:24] scan: aspect = 16:9
+[03:10:24] scan: decoding previews for title 1
+libdvdnav: Suspected RCE Region Protection!!!
+libdvdnav: Suspected RCE Region Protection!!!
+[03:10:24] scan: title angle(s) 1
+[ac3 @ 0x7f9cd8051280] invalid sample rate
+[ac3 @ 0x7f9cd8051280] unable to determine channel mode
+[03:10:24] scan: audio 0x82bd: ac3, rate=48000Hz, bitrate=192000 Francais (AC3, 2.0 ch, Dolby Surround, 192 kbps)
+[03:10:24] scan: audio 0x80bd: ac3, rate=48000Hz, bitrate=192000 English (AC3, 2.0 ch, Dolby Surround, 192 kbps)
+[03:10:24] scan: audio 0x81bd: ac3, rate=48000Hz, bitrate=192000 español (AC3, 2.0 ch, Dolby Surround, 192 kbps)
+[03:10:25] using bitstream PAR 32:27
+[03:10:25] scan: 10 previews, 720x480, 23.976 fps, autocrop = 0/0/0/0, aspect 16:9, PAR 32:27, color profile: 6-1-6, chroma location: left
+[03:10:25] libhb: scan thread found 1 valid title(s)
++ Using preset: dvd
++ title 1:
+  + index 1
+  + duration: 00:21:57
+  + size: 720x480, pixel aspect: 32/27, display aspect: 1.78, 23.976 fps
+  + autocrop: 0/0/0/0
+  + chapters:
+    + 1: duration 00:00:19
+    + 2: duration 00:08:35
+    + 3: duration 00:07:50
+    + 4: duration 00:04:37
+    + 5: duration 00:00:37
+    + 6: duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3, 2.0 ch, Dolby Surround, 192 kbps) (iso639-2: eng), 48000Hz, 192000bps
+    + 2, español (AC3, 2.0 ch, Dolby Surround, 192 kbps) (iso639-2: spa), 48000Hz, 192000bps
+    + 3, Francais (AC3, 2.0 ch, Dolby Surround, 192 kbps) (iso639-2: fra), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English Closed Caption (Wide Screen) [VOBSUB]
+    + 2, English Closed Caption (Letterbox) [VOBSUB]
+    + 3, español (Wide Screen) [VOBSUB]
+    + 4, español (Letterbox) [VOBSUB]
+    + 5, español (Wide Screen) [VOBSUB]
+    + 6, español (Letterbox) [VOBSUB]
+    + 7, Francais (Wide Screen) [VOBSUB]
+    + 8, Francais (Letterbox) [VOBSUB]
+    + 9, English, Closed Caption [CC608]
+[03:10:25] Starting work at: Sun Dec 28 03:10:25 2025
+
+[03:10:25] 1 job(s) to process
+[03:10:25] json job:
+{
+    "Audio": {
+        "AudioList": [
+            {
+                "Bitrate": 0,
+                "DRC": 0.0,
+                "Encoder": "copy:ac3",
+                "Mixdown": "none",
+                "Name": "Stereo",
+                "PresetEncoder": "copy:ac3",
+                "Quality": -3.0,
+                "Samplerate": 0,
+                "Track": 0
+            },
+            {
+                "Bitrate": 0,
+                "DRC": 0.0,
+                "Encoder": "copy:ac3",
+                "Mixdown": "none",
+                "Name": "Stereo",
+                "PresetEncoder": "copy:ac3",
+                "Quality": -3.0,
+                "Samplerate": 0,
+                "Track": 1
+            },
+            {
+                "Bitrate": 0,
+                "DRC": 0.0,
+                "Encoder": "copy:ac3",
+                "Mixdown": "none",
+                "Name": "Stereo",
+                "PresetEncoder": "copy:ac3",
+                "Quality": -3.0,
+                "Samplerate": 0,
+                "Track": 2
+            }
+        ],
+        "CopyMask": [],
+        "FallbackEncoder": "ac3"
+    },
+    "Destination": {
+        "AlignAVStart": false,
+        "ChapterList": [
+            {
+                "Duration": {
+                    "Hours": 0,
+                    "Minutes": 0,
+                    "Seconds": 19,
+                    "Ticks": 1710000
+                },
+                "Name": "Chapter 1"
+            },
+            {
+                "Duration": {
+                    "Hours": 0,
+                    "Minutes": 8,
+                    "Seconds": 35,
+                    "Ticks": 46305000
+                },
+                "Name": "Chapter 2"
+            },
+            {
+                "Duration": {
+                    "Hours": 0,
+                    "Minutes": 7,
+                    "Seconds": 50,
+                    "Ticks": 42270030
+                },
+                "Name": "Chapter 3"
+            },
+            {
+                "Duration": {
+                    "Hours": 0,
+                    "Minutes": 4,
+                    "Seconds": 37,
+                    "Ticks": 24959970
+                },
+                "Name": "Chapter 4"
+            },
+            {
+                "Duration": {
+                    "Hours": 0,
+                    "Minutes": 0,
+                    "Seconds": 37,
+                    "Ticks": 3306060
+                },
+                "Name": "Chapter 5"
+            },
+            {
+                "Duration": {
+                    "Hours": 0,
+                    "Minutes": 0,
+                    "Seconds": 1,
+                    "Ticks": 45000
+                },
+                "Name": "Chapter 6"
+            }
+        ],
+        "ChapterMarkers": true,
+        "File": "/home/aspendlove/Videos/S1E1 - The Cabin Show.mkv",
+        "InlineParameterSets": false,
+        "Mux": "mkv",
+        "Options": {
+            "IpodAtom": false,
+            "Optimize": false
+        }
+    },
+    "Filters": {
+        "FilterList": [
+            {
+                "ID": 4,
+                "Settings": {
+                    "block-height": "16",
+                    "block-thresh": "40",
+                    "block-width": "16",
+                    "filter-mode": "2",
+                    "mode": "3",
+                    "motion-thresh": "1",
+                    "spatial-metric": "2",
+                    "spatial-thresh": "1"
+                }
+            },
+            {
+                "ID": 6,
+                "Settings": {
+                    "mode": "7"
+                }
+            },
+            {
+                "ID": 11,
+                "Settings": {
+                    "mode": 1
+                }
+            },
+            {
+                "ID": 20,
+                "Settings": {
+                    "crop-bottom": 0,
+                    "crop-left": 0,
+                    "crop-right": 0,
+                    "crop-top": 0,
+                    "height": 480,
+                    "width": 720
+                }
+            }
+        ]
+    },
+    "Metadata": {},
+    "PAR": {
+        "Den": 27,
+        "Num": 32
+    },
+    "SequenceID": 0,
+    "Source": {
+        "Angle": 0,
+        "HWDecode": 0,
+        "KeepDuplicateTitles": false,
+        "Path": "/dev/sr0",
+        "Range": {
+            "End": 6,
+            "Start": 1,
+            "Type": "chapter"
+        },
+        "Title": 1
+    },
+    "Subtitle": {
+        "Search": {
+            "Burn": true,
+            "Default": false,
+            "Enable": true,
+            "Forced": true
+        },
+        "SubtitleList": [
+            {
+                "Burn": false,
+                "Default": false,
+                "Forced": false,
+                "Name": "Closed Caption",
+                "Track": 0
+            },
+            {
+                "Burn": false,
+                "Default": false,
+                "Forced": false,
+                "Name": "Closed Caption",
+                "Track": 1
+            },
+            {
+                "Burn": false,
+                "Default": false,
+                "Forced": false,
+                "Track": 2
+            },
+            {
+                "Burn": false,
+                "Default": false,
+                "Forced": false,
+                "Track": 3
+            },
+            {
+                "Burn": false,
+                "Default": false,
+                "Forced": false,
+                "Track": 4
+            },
+            {
+                "Burn": false,
+                "Default": false,
+                "Forced": false,
+                "Track": 5
+            },
+            {
+                "Burn": false,
+                "Default": false,
+                "Forced": false,
+                "Track": 6
+            },
+            {
+                "Burn": false,
+                "Default": false,
+                "Forced": false,
+                "Track": 7
+            },
+            {
+                "Burn": false,
+                "Default": false,
+                "Forced": false,
+                "Track": 8
+            }
+        ]
+    },
+    "Video": {
+        "AdapterIndex": -1,
+        "AsyncDepth": 0,
+        "ChromaLocation": 1,
+        "ColorInputFormat": 0,
+        "ColorMatrix": 6,
+        "ColorOutputFormat": 0,
+        "ColorPrimaries": 6,
+        "ColorRange": 1,
+        "ColorTransfer": 1,
+        "Encoder": "x264",
+        "HardwareDecode": 0,
+        "Level": "4.0",
+        "MultiPass": false,
+        "Options": "",
+        "PasshtruHDRDynamicMetadata": 6,
+        "Preset": "medium",
+        "Profile": "high",
+        "Quality": 20.0,
+        "Tune": "",
+        "Turbo": false
+    }
+}
+[03:10:25] Starting Task: Subtitle Scan
+[03:10:25] work: skipping crop/scale filter
+[03:10:25] job configuration:
+[03:10:25]  * source
+[03:10:25]    + /dev/sr0
+[03:10:25]    + title 1, chapter(s) 1 to 6
+[03:10:25]  * destination
+[03:10:25]    + /home/aspendlove/Videos/S1E1 - The Cabin Show.mkv
+[03:10:25]    + container: Matroska (libavformat)
+[03:10:25]      + chapter markers
+[03:10:25]  * video track
+[03:10:25]    + decoder: mpeg2video 8-bit (yuv420p)
+[03:10:25]      + bitrate 200 kbps
+[03:10:25]    + filters
+[03:10:25]      + Comb Detect (mode=3:spatial-metric=2:motion-thresh=1:spatial-thresh=1:filter-mode=2:block-thresh=40:block-width=16:block-height=16)
+[03:10:25]      + Decomb (mode=39)
+[03:10:25]      + Framerate Shaper (mode=1)
+[03:10:25]        + frame rate: 23.976 fps -> constant 23.976 fps
+[03:10:25]    + Output geometry
+[03:10:25]      + storage dimensions: 720 x 480
+[03:10:25]      + pixel aspect ratio: 32 : 27
+[03:10:25]      + display dimensions: 853 x 480
+[03:10:25]  * Foreign Audio Search: Render/Burn-in, Forced Only
+[03:10:25]    + subtitle, English Closed Caption (Wide Screen) [VOBSUB] (track 0, id 0x20bd, Picture)
+[03:10:25]    + subtitle, English Closed Caption (Letterbox) [VOBSUB] (track 1, id 0x21bd, Picture)
+[03:10:25] dvd: Region mask 0xfe
+libdvdnav: Suspected RCE Region Protection!!!
+libdvdnav: Suspected RCE Region Protection!!!
+[03:10:25] sync: expecting 31594 video frames
+libdvdnav: DVD Title: ARRESTED_DEVELOPMENT_S3_D1
+libdvdnav: DVD Serial Number: 34D59947
+libdvdnav: DVD Title (Alternative): ARRESTED_DEVELOPMENT_S3_D1
+libdvdnav: DVD disk reports itself with Region mask 0x00fe0000. Regions: 01
+libdvdread: Attempting to retrieve all CSS keys
+libdvdread: This can take a _long_ time, please be patient
+libdvdread: Get key for /VIDEO_TS/VIDEO_TS.VOB at 0x0000013a
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_0.VOB at 0x00000498
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_1.VOB at 0x00000508
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_02_1.VOB at 0x000005e1
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_03_1.VOB at 0x00001208
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_0.VOB at 0x00027b11
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_1.VOB at 0x000407bc
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_05_1.VOB at 0x0004089a
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_06_1.VOB at 0x003dcb70
+libdvdread: Elapsed time 0
+libdvdread: Found 6 VTS's
+libdvdread: Elapsed time 0
+libdvdnav: DVD disk reports itself with Region mask 0x00fe0000. Regions: 01
+libdvdnav: DVD Title: ARRESTED_DEVELOPMENT_S3_D1
+libdvdnav: DVD Serial Number: 34D59947
+libdvdnav: DVD Title (Alternative): ARRESTED_DEVELOPMENT_S3_D1
+libdvdnav: DVD disk reports itself with Region mask 0x00fe0000. Regions: 01
+libdvdread: Attempting to retrieve all CSS keys
+libdvdread: This can take a _long_ time, please be patient
+libdvdread: Get key for /VIDEO_TS/VIDEO_TS.VOB at 0x0000013a
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_0.VOB at 0x00000498
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_1.VOB at 0x00000508
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_02_1.VOB at 0x000005e1
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_03_1.VOB at 0x00001208
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_0.VOB at 0x00027b11
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_1.VOB at 0x000407bc
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_05_1.VOB at 0x0004089a
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_06_1.VOB at 0x003dcb70
+libdvdread: Elapsed time 0
+libdvdread: Found 6 VTS's
+libdvdread: Elapsed time 0
+libdvdnav: DVD disk reports itself with Region mask 0x00fe0000. Regions: 01
+Encoding: task 1 of 2, 6.30 % (0.00 fps, avg 0.00 fps, ETA 00h00m01s)[dvdsubdec @ 0x7f9cd8226ac0] Invalid command offset
+Encoding: task 1 of 2, 18.90 % (0.00 fps, avg 0.00 fps, ETA 00h00m01s)[dvdsubdec @ 0x7f9cd8226ac0] Discarding invalid packet
+[dvdsubdec @ 0x7f9cd8237ec0] Discarding invalid packet
+Encoding: task 1 of 2, 31.61 % (0.00 fps, avg 0.00 fps, ETA 00h00m01s)[dvdsubdec @ 0x7f9cd8226ac0] Discarding invalid packet
+[dvdsubdec @ 0x7f9cd8237ec0] Discarding invalid packet
+Encoding: task 1 of 2, 43.69 % (0.00 fps, avg 0.00 fps, ETA 00h00m00s)Encoding: task 1 of 2, 56.11 % (0.00 fps, avg 0.00 fps, ETA 00h00m00s)Encoding: task 1 of 2, 68.26 % (0.00 fps, avg 0.00 fps, ETA 00h00m00s)Encoding: task 1 of 2, 80.79 % (0.00 fps, avg 0.00 fps, ETA 00h00m00s)Encoding: task 1 of 2, 93.33 % (0.00 fps, avg 0.00 fps, ETA 00h00m00s)[03:10:26] reader: done. 2 scr changes
+[03:10:26] work: average encoding speed for job is 0.000000 fps
+[03:10:26] comb detect: heavy 0 | light 0 | uncombed 0 | total 0
+[03:10:26] vfr: 0 frames output, 0 dropped and 0 duped for CFR/PFR
+[03:10:26] vfr: lost time: 0 (0 frames)
+[03:10:26] vfr: gained time: 0 (0 frames) (0 not accounted for)
+Encoding: task 1 of 2, 100.00 % (0.00 fps, avg 0.00 fps, ETA 00h00m00s)[03:10:26] mpeg2video-decoder done: 0 frames, 1 decoder errors
+[03:10:26] sync: got 0 frames, 31594 expected
+[03:10:26] Subtitle track 0 (id 0x20bd) 'English Closed Caption (Wide Screen) [VOBSUB]': 366 hits (0 forced)
+[03:10:26] Subtitle track 1 (id 0x21bd) 'English Closed Caption (Letterbox) [VOBSUB]': 350 hits (0 forced)
+[03:10:26] No candidate detected during subtitle scan
+[03:10:26] Starting Task: Encoding Pass
+[03:10:26] work: skipping crop/scale filter
+[03:10:26] job configuration:
+[03:10:26]  * source
+[03:10:26]    + /dev/sr0
+[03:10:26]    + title 1, chapter(s) 1 to 6
+[03:10:26]  * destination
+[03:10:26]    + /home/aspendlove/Videos/S1E1 - The Cabin Show.mkv
+[03:10:26]    + container: Matroska (libavformat)
+[03:10:26]      + chapter markers
+[03:10:26]  * video track
+[03:10:26]    + decoder: mpeg2video 8-bit (yuv420p)
+[03:10:26]      + bitrate 200 kbps
+[03:10:26]    + filters
+[03:10:26]      + Comb Detect (mode=3:spatial-metric=2:motion-thresh=1:spatial-thresh=1:filter-mode=2:block-thresh=40:block-width=16:block-height=16)
+[03:10:26]      + Decomb (mode=39)
+[03:10:26]      + Framerate Shaper (mode=1)
+[03:10:26]        + frame rate: 23.976 fps -> constant 23.976 fps
+[03:10:26]    + Output geometry
+[03:10:26]      + storage dimensions: 720 x 480
+[03:10:26]      + pixel aspect ratio: 32 : 27
+[03:10:26]      + display dimensions: 853 x 480
+[03:10:26]    + encoder: H.264 (libx264)
+[03:10:26]      + preset:  medium
+[03:10:26]      + profile: high
+[03:10:26]      + level:   4.0
+[03:10:26]      + quality: 20.00 (RF)
+[03:10:26]      + color profile: 6-1-6
+[03:10:26]      + color range: tv
+[03:10:26]      + chroma location: left
+[03:10:26]  * subtitle track 1, English Closed Caption (Wide Screen) [VOBSUB] (track 0, id 0x20bd, Picture) -> Passthru
+[03:10:26]    + name: Closed Caption
+[03:10:26]  * subtitle track 2, English Closed Caption (Letterbox) [VOBSUB] (track 1, id 0x21bd, Picture) -> Passthru
+[03:10:26]    + name: Closed Caption
+[03:10:26]  * subtitle track 3, español (Wide Screen) [VOBSUB] (track 2, id 0x22bd, Picture) -> Passthru
+[03:10:26]  * subtitle track 4, español (Letterbox) [VOBSUB] (track 3, id 0x23bd, Picture) -> Passthru
+[03:10:26]  * subtitle track 5, español (Wide Screen) [VOBSUB] (track 4, id 0x24bd, Picture) -> Passthru
+[03:10:26]  * subtitle track 6, español (Letterbox) [VOBSUB] (track 5, id 0x25bd, Picture) -> Passthru
+[03:10:26]  * subtitle track 7, Francais (Wide Screen) [VOBSUB] (track 6, id 0x26bd, Picture) -> Passthru
+[03:10:26]  * subtitle track 8, Francais (Letterbox) [VOBSUB] (track 7, id 0x27bd, Picture) -> Passthru
+[03:10:26]  * subtitle track 9, English, Closed Caption [CC608] (track 8, id 0xfe000000, Text) -> Passthru
+[03:10:26]  * audio track 1
+[03:10:26]    + name: Stereo
+[03:10:26]    + decoder: English (AC3, 2.0 ch, Dolby Surround, 192 kbps) (track 1, id 0x80bd)
+[03:10:26]      + bitrate: 192 kbps, samplerate: 48000 Hz
+[03:10:26]    + AC3 Passthru
+[03:10:26]  * audio track 2
+[03:10:26]    + name: Stereo
+[03:10:26]    + decoder: español (AC3, 2.0 ch, Dolby Surround, 192 kbps) (track 2, id 0x81bd)
+[03:10:26]      + bitrate: 192 kbps, samplerate: 48000 Hz
+[03:10:26]    + AC3 Passthru
+[03:10:26]  * audio track 3
+[03:10:26]    + name: Stereo
+[03:10:26]    + decoder: Francais (AC3, 2.0 ch, Dolby Surround, 192 kbps) (track 3, id 0x82bd)
+[03:10:26]      + bitrate: 192 kbps, samplerate: 48000 Hz
+[03:10:26]    + AC3 Passthru
+[03:10:26] dvd: Region mask 0xfe
+libdvdnav: Suspected RCE Region Protection!!!
+libdvdnav: Suspected RCE Region Protection!!!
+[03:10:27] sync: expecting 31594 video frames
+[03:10:27] encx264: min-keyint: 24, keyint: 240
+[03:10:27] encx264: encoding at constant RF 20.000000
+[03:10:27] encx264: unparsed options: level=4.0:vbv-bufsize=31250:vbv-maxrate=25000
+x264 [info]: using SAR=32/27
+x264 [info]: using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+x264 [info]: profile High, level 4.0, 4:2:0, 8-bit
+libdvdnav: DVD Title: ARRESTED_DEVELOPMENT_S3_D1
+libdvdnav: DVD Serial Number: 34D59947
+libdvdnav: DVD Title (Alternative): ARRESTED_DEVELOPMENT_S3_D1
+libdvdnav: DVD disk reports itself with Region mask 0x00fe0000. Regions: 01
+libdvdread: Attempting to retrieve all CSS keys
+libdvdread: This can take a _long_ time, please be patient
+libdvdread: Get key for /VIDEO_TS/VIDEO_TS.VOB at 0x0000013a
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_0.VOB at 0x00000498
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_1.VOB at 0x00000508
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_02_1.VOB at 0x000005e1
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_03_1.VOB at 0x00001208
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_0.VOB at 0x00027b11
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_1.VOB at 0x000407bc
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_05_1.VOB at 0x0004089a
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_06_1.VOB at 0x003dcb70
+libdvdread: Elapsed time 0
+libdvdread: Found 6 VTS's
+libdvdread: Elapsed time 0
+libdvdnav: DVD disk reports itself with Region mask 0x00fe0000. Regions: 01
+Encoding: task 2 of 2, 0.00 %[03:10:27] sync: first pts video is 0
+[03:10:27] sync: "Chapter 1" (1) at frame 1 time 0
+[03:10:27] sync: first pts audio 0x80bd is 0
+[03:10:27] sync: first pts audio 0x81bd is 0
+[03:10:27] sync: first pts audio 0x82bd is 0
+[03:10:27] sync: first pts subtitle 0xfe000000 is 0
+[03:10:27] sync: first pts subtitle 0x20bd is 186186
+[03:10:27] sync: first pts subtitle 0x21bd is 186186
+[03:10:27] sync: first pts subtitle 0x22bd is 186186
+[03:10:27] sync: first pts subtitle 0x23bd is 186186
+Encoding: task 2 of 2, 0.47 %[03:10:27] sync: first pts subtitle 0x24bd is 561561
+[03:10:27] sync: first pts subtitle 0x25bd is 561561
+[03:10:27] sync: first pts subtitle 0x26bd is 561561
+[03:10:27] sync: first pts subtitle 0x27bd is 561561
+[03:10:27] sync: subtitle 0xfe000000 has no duration, PTS 656155
+Encoding: task 2 of 2, 0.66 %Encoding: task 2 of 2, 0.86 %Encoding: task 2 of 2, 1.16 %Encoding: task 2 of 2, 1.41 %[03:10:28] sync: "Chapter 2" (2) at frame 457 time 1711710
+[03:10:28] sync: subtitle 0xfe000000 has no duration, PTS 1756755
+Encoding: task 2 of 2, 1.67 %Encoding: task 2 of 2, 1.82 %[03:10:28] sync: subtitle 0xfe000000 has no duration, PTS 2255253
+Encoding: task 2 of 2, 2.02 %Encoding: task 2 of 2, 2.17 %Encoding: task 2 of 2, 2.33 %Encoding: task 2 of 2, 2.53 %Encoding: task 2 of 2, 2.72 %Encoding: task 2 of 2, 2.87 %Encoding: task 2 of 2, 3.03 %Encoding: task 2 of 2, 3.23 %Encoding: task 2 of 2, 3.38 %Encoding: task 2 of 2, 3.53 %[03:10:30] sync: subtitle 0xfe000000 has no duration, PTS 3906903
+Encoding: task 2 of 2, 3.68 %Encoding: task 2 of 2, 3.84 %Encoding: task 2 of 2, 3.99 %Encoding: task 2 of 2, 4.14 % (265.60 fps, avg 311.62 fps, ETA 00h01m37s)Encoding: task 2 of 2, 4.29 % (265.60 fps, avg 311.62 fps, ETA 00h01m37s)Encoding: task 2 of 2, 4.44 % (265.60 fps, avg 311.62 fps, ETA 00h01m37s)Encoding: task 2 of 2, 4.60 % (265.60 fps, avg 311.62 fps, ETA 00h01m37s)Encoding: task 2 of 2, 4.75 % (265.60 fps, avg 311.62 fps, ETA 00h01m37s)[03:10:32] sync: subtitle 0xfe000000 has no duration, PTS 5551045
+Encoding: task 2 of 2, 4.95 % (255.23 fps, avg 298.71 fps, ETA 00h01m40s)Encoding: task 2 of 2, 5.10 % (255.23 fps, avg 298.71 fps, ETA 00h01m40s)Encoding: task 2 of 2, 5.25 % (255.23 fps, avg 298.71 fps, ETA 00h01m40s)Encoding: task 2 of 2, 5.46 % (255.23 fps, avg 298.71 fps, ETA 00h01m40s)Encoding: task 2 of 2, 5.56 % (255.23 fps, avg 298.71 fps, ETA 00h01m40s)Encoding: task 2 of 2, 5.76 % (247.18 fps, avg 291.74 fps, ETA 00h01m42s)Encoding: task 2 of 2, 5.91 % (247.18 fps, avg 291.74 fps, ETA 00h01m42s)Encoding: task 2 of 2, 6.06 % (247.18 fps, avg 291.74 fps, ETA 00h01m42s)Encoding: task 2 of 2, 6.22 % (247.18 fps, avg 291.74 fps, ETA 00h01m42s)Encoding: task 2 of 2, 6.42 % (247.18 fps, avg 291.74 fps, ETA 00h01m42s)Encoding: task 2 of 2, 6.57 % (247.18 fps, avg 291.74 fps, ETA 00h01m42s)Encoding: task 2 of 2, 6.72 % (254.86 fps, avg 287.00 fps, ETA 00h01m42s)Encoding: task 2 of 2, 6.93 % (254.86 fps, avg 287.00 fps, ETA 00h01m42s)Encoding: task 2 of 2, 7.07 % (254.86 fps, avg 287.00 fps, ETA 00h01m42s)Encoding: task 2 of 2, 7.23 % (254.86 fps, avg 287.00 fps, ETA 00h01m42s)Encoding: task 2 of 2, 7.38 % (254.86 fps, avg 287.00 fps, ETA 00h01m42s)Encoding: task 2 of 2, 7.53 % (262.40 fps, avg 285.02 fps, ETA 00h01m42s)Encoding: task 2 of 2, 7.74 % (262.40 fps, avg 285.02 fps, ETA 00h01m42s)Encoding: task 2 of 2, 7.89 % (262.40 fps, avg 285.02 fps, ETA 00h01m42s)Encoding: task 2 of 2, 8.09 % (262.40 fps, avg 285.02 fps, ETA 00h01m42s)Encoding: task 2 of 2, 8.24 % (262.40 fps, avg 285.02 fps, ETA 00h01m42s)Encoding: task 2 of 2, 8.39 % (263.57 fps, avg 282.34 fps, ETA 00h01m42s)Encoding: task 2 of 2, 8.60 % (263.57 fps, avg 282.34 fps, ETA 00h01m42s)Encoding: task 2 of 2, 8.75 % (263.57 fps, avg 282.34 fps, ETA 00h01m42s)Encoding: task 2 of 2, 8.95 % (263.57 fps, avg 282.34 fps, ETA 00h01m42s)Encoding: task 2 of 2, 9.10 % (263.57 fps, avg 282.34 fps, ETA 00h01m42s)Encoding: task 2 of 2, 9.25 % (268.13 fps, avg 281.33 fps, ETA 00h01m41s)[03:10:37] sync: subtitle 0xfe000000 has no duration, PTS 11031520
+Encoding: task 2 of 2, 9.46 % (268.13 fps, avg 281.33 fps, ETA 00h01m41s)Encoding: task 2 of 2, 9.61 % (268.13 fps, avg 281.33 fps, ETA 00h01m41s)Encoding: task 2 of 2, 9.76 % (268.13 fps, avg 281.33 fps, ETA 00h01m41s)Encoding: task 2 of 2, 9.91 % (268.13 fps, avg 281.33 fps, ETA 00h01m41s)Encoding: task 2 of 2, 10.07 % (262.87 fps, avg 278.95 fps, ETA 00h01m41s)Encoding: task 2 of 2, 10.27 % (262.87 fps, avg 278.95 fps, ETA 00h01m41s)Encoding: task 2 of 2, 10.42 % (262.87 fps, avg 278.95 fps, ETA 00h01m41s)Encoding: task 2 of 2, 10.62 % (262.87 fps, avg 278.95 fps, ETA 00h01m41s)Encoding: task 2 of 2, 10.77 % (262.87 fps, avg 278.95 fps, ETA 00h01m41s)Encoding: task 2 of 2, 10.93 % (265.80 fps, avg 278.23 fps, ETA 00h01m41s)Encoding: task 2 of 2, 11.13 % (265.80 fps, avg 278.23 fps, ETA 00h01m41s)Encoding: task 2 of 2, 11.28 % (265.80 fps, avg 278.23 fps, ETA 00h01m41s)Encoding: task 2 of 2, 11.43 % (265.80 fps, avg 278.23 fps, ETA 00h01m41s)Encoding: task 2 of 2, 11.58 % (265.80 fps, avg 278.23 fps, ETA 00h01m41s)[03:10:40] sync: subtitle 0xfe000000 has no duration, PTS 13581067
+Encoding: task 2 of 2, 11.79 % (262.04 fps, avg 276.94 fps, ETA 00h01m40s)Encoding: task 2 of 2, 11.94 % (262.04 fps, avg 276.94 fps, ETA 00h01m40s)Encoding: task 2 of 2, 12.14 % (262.04 fps, avg 276.94 fps, ETA 00h01m40s)[03:10:40] sync: subtitle 0xfe000000 has no duration, PTS 14342328
+Encoding: task 2 of 2, 12.34 % (262.04 fps, avg 276.94 fps, ETA 00h01m40s)Encoding: task 2 of 2, 12.50 % (262.04 fps, avg 276.94 fps, ETA 00h01m40s)[03:10:41] sync: subtitle 0xfe000000 has no duration, PTS 14785270
+Encoding: task 2 of 2, 12.70 % (272.52 fps, avg 277.59 fps, ETA 00h01m39s)Encoding: task 2 of 2, 12.85 % (272.52 fps, avg 277.59 fps, ETA 00h01m39s)Encoding: task 2 of 2, 13.05 % (272.52 fps, avg 277.59 fps, ETA 00h01m39s)Encoding: task 2 of 2, 13.21 % (272.52 fps, avg 277.59 fps, ETA 00h01m39s)Encoding: task 2 of 2, 13.41 % (272.52 fps, avg 277.59 fps, ETA 00h01m39s)Encoding: task 2 of 2, 13.56 % (272.52 fps, avg 277.59 fps, ETA 00h01m39s)Encoding: task 2 of 2, 13.71 % (275.86 fps, avg 277.76 fps, ETA 00h01m38s)Encoding: task 2 of 2, 13.96 % (275.86 fps, avg 277.76 fps, ETA 00h01m38s)Encoding: task 2 of 2, 14.22 % (275.86 fps, avg 277.76 fps, ETA 00h01m38s)Encoding: task 2 of 2, 14.52 % (275.86 fps, avg 277.76 fps, ETA 00h01m38s)Encoding: task 2 of 2, 14.77 % (275.86 fps, avg 277.76 fps, ETA 00h01m38s)Encoding: task 2 of 2, 15.08 % (319.27 fps, avg 284.80 fps, ETA 00h01m34s)Encoding: task 2 of 2, 15.23 % (319.27 fps, avg 284.80 fps, ETA 00h01m34s)Encoding: task 2 of 2, 15.38 % (319.27 fps, avg 284.80 fps, ETA 00h01m34s)Encoding: task 2 of 2, 15.53 % (319.27 fps, avg 284.80 fps, ETA 00h01m34s)Encoding: task 2 of 2, 15.74 % (319.27 fps, avg 284.80 fps, ETA 00h01m34s)Encoding: task 2 of 2, 15.89 % (319.06 fps, avg 284.86 fps, ETA 00h01m33s)Encoding: task 2 of 2, 16.04 % (319.06 fps, avg 284.86 fps, ETA 00h01m33s)Encoding: task 2 of 2, 16.24 % (319.06 fps, avg 284.86 fps, ETA 00h01m33s)Encoding: task 2 of 2, 16.34 % (319.06 fps, avg 284.86 fps, ETA 00h01m33s)Encoding: task 2 of 2, 16.55 % (319.06 fps, avg 284.86 fps, ETA 00h01m33s)Encoding: task 2 of 2, 16.70 % (309.28 fps, avg 283.04 fps, ETA 00h01m33s)Encoding: task 2 of 2, 16.85 % (309.28 fps, avg 283.04 fps, ETA 00h01m33s)Encoding: task 2 of 2, 17.05 % (309.28 fps, avg 283.04 fps, ETA 00h01m33s)Encoding: task 2 of 2, 17.26 % (309.28 fps, avg 283.04 fps, ETA 00h01m33s)Encoding: task 2 of 2, 17.41 % (309.28 fps, avg 283.04 fps, ETA 00h01m33s)Encoding: task 2 of 2, 17.61 % (273.46 fps, avg 283.00 fps, ETA 00h01m32s)Encoding: task 2 of 2, 17.76 % (273.46 fps, avg 283.00 fps, ETA 00h01m32s)Encoding: task 2 of 2, 17.97 % (273.46 fps, avg 283.00 fps, ETA 00h01m32s)Encoding: task 2 of 2, 18.17 % (273.46 fps, avg 283.00 fps, ETA 00h01m32s)Encoding: task 2 of 2, 18.37 % (273.46 fps, avg 283.00 fps, ETA 00h01m32s)Encoding: task 2 of 2, 18.52 % (276.39 fps, avg 283.57 fps, ETA 00h01m30s)Encoding: task 2 of 2, 18.67 % (276.39 fps, avg 283.57 fps, ETA 00h01m30s)Encoding: task 2 of 2, 18.83 % (276.39 fps, avg 283.57 fps, ETA 00h01m30s)Encoding: task 2 of 2, 19.03 % (276.39 fps, avg 283.57 fps, ETA 00h01m30s)Encoding: task 2 of 2, 19.18 % (276.39 fps, avg 283.57 fps, ETA 00h01m30s)Encoding: task 2 of 2, 19.38 % (282.26 fps, avg 282.93 fps, ETA 00h01m30s)Encoding: task 2 of 2, 19.54 % (282.26 fps, avg 282.93 fps, ETA 00h01m30s)Encoding: task 2 of 2, 19.69 % (282.26 fps, avg 282.93 fps, ETA 00h01m30s)Encoding: task 2 of 2, 19.89 % (282.26 fps, avg 282.93 fps, ETA 00h01m30s)Encoding: task 2 of 2, 20.09 % (282.26 fps, avg 282.93 fps, ETA 00h01m30s)Encoding: task 2 of 2, 20.24 % (282.26 fps, avg 282.93 fps, ETA 00h01m30s)Encoding: task 2 of 2, 20.45 % (280.88 fps, avg 282.72 fps, ETA 00h01m29s)Encoding: task 2 of 2, 20.60 % (280.88 fps, avg 282.72 fps, ETA 00h01m29s)Encoding: task 2 of 2, 20.75 % (280.88 fps, avg 282.72 fps, ETA 00h01m29s)Encoding: task 2 of 2, 20.90 % (280.88 fps, avg 282.72 fps, ETA 00h01m29s)[03:10:50] sync: subtitle 0xfe000000 has no duration, PTS 24887362
+Encoding: task 2 of 2, 21.11 % (280.88 fps, avg 282.72 fps, ETA 00h01m29s)Encoding: task 2 of 2, 21.31 % (274.26 fps, avg 282.35 fps, ETA 00h01m28s)[03:10:51] sync: subtitle 0xfe000000 has no duration, PTS 25370845
+Encoding: task 2 of 2, 21.46 % (274.26 fps, avg 282.35 fps, ETA 00h01m28s)Encoding: task 2 of 2, 21.66 % (274.26 fps, avg 282.35 fps, ETA 00h01m28s)Encoding: task 2 of 2, 21.81 % (274.26 fps, avg 282.35 fps, ETA 00h01m28s)Encoding: task 2 of 2, 21.97 % (274.26 fps, avg 282.35 fps, ETA 00h01m28s)Encoding: task 2 of 2, 22.17 % (273.28 fps, avg 281.72 fps, ETA 00h01m27s)Encoding: task 2 of 2, 22.32 % (273.28 fps, avg 281.72 fps, ETA 00h01m27s)Encoding: task 2 of 2, 22.52 % (273.28 fps, avg 281.72 fps, ETA 00h01m27s)Encoding: task 2 of 2, 22.73 % (273.28 fps, avg 281.72 fps, ETA 00h01m27s)Encoding: task 2 of 2, 22.93 % (273.28 fps, avg 281.72 fps, ETA 00h01m27s)Encoding: task 2 of 2, 23.13 % (280.52 fps, avg 282.45 fps, ETA 00h01m26s)Encoding: task 2 of 2, 23.28 % (280.52 fps, avg 282.45 fps, ETA 00h01m26s)Encoding: task 2 of 2, 23.49 % (280.52 fps, avg 282.45 fps, ETA 00h01m26s)Encoding: task 2 of 2, 23.64 % (280.52 fps, avg 282.45 fps, ETA 00h01m26s)Encoding: task 2 of 2, 23.84 % (280.52 fps, avg 282.45 fps, ETA 00h01m26s)[03:10:53] sync: subtitle 0xfe000000 has no duration, PTS 28138110
+Encoding: task 2 of 2, 23.94 % (280.88 fps, avg 282.18 fps, ETA 00h01m25s)Encoding: task 2 of 2, 24.14 % (280.88 fps, avg 282.18 fps, ETA 00h01m25s)Encoding: task 2 of 2, 24.30 % (280.88 fps, avg 282.18 fps, ETA 00h01m25s)Encoding: task 2 of 2, 24.50 % (280.88 fps, avg 282.18 fps, ETA 00h01m25s)Encoding: task 2 of 2, 24.70 % (280.88 fps, avg 282.18 fps, ETA 00h01m25s)Encoding: task 2 of 2, 24.85 % (286.37 fps, avg 282.23 fps, ETA 00h01m24s)Encoding: task 2 of 2, 25.00 % (286.37 fps, avg 282.23 fps, ETA 00h01m24s)Encoding: task 2 of 2, 25.21 % (286.37 fps, avg 282.23 fps, ETA 00h01m24s)Encoding: task 2 of 2, 25.36 % (286.37 fps, avg 282.23 fps, ETA 00h01m24s)Encoding: task 2 of 2, 25.56 % (286.37 fps, avg 282.23 fps, ETA 00h01m24s)Encoding: task 2 of 2, 25.76 % (279.79 fps, avg 282.17 fps, ETA 00h01m23s)Encoding: task 2 of 2, 25.92 % (279.79 fps, avg 282.17 fps, ETA 00h01m23s)Encoding: task 2 of 2, 26.12 % (279.79 fps, avg 282.17 fps, ETA 00h01m23s)Encoding: task 2 of 2, 26.32 % (279.79 fps, avg 282.17 fps, ETA 00h01m23s)Encoding: task 2 of 2, 26.47 % (279.79 fps, avg 282.17 fps, ETA 00h01m23s)Encoding: task 2 of 2, 26.63 % (279.79 fps, avg 282.17 fps, ETA 00h01m23s)Encoding: task 2 of 2, 26.83 % (280.52 fps, avg 282.01 fps, ETA 00h01m22s)Encoding: task 2 of 2, 26.98 % (280.52 fps, avg 282.01 fps, ETA 00h01m22s)Encoding: task 2 of 2, 27.18 % (280.52 fps, avg 282.01 fps, ETA 00h01m22s)Encoding: task 2 of 2, 27.33 % (280.52 fps, avg 282.01 fps, ETA 00h01m22s)Encoding: task 2 of 2, 27.54 % (280.52 fps, avg 282.01 fps, ETA 00h01m22s)Encoding: task 2 of 2, 27.74 % (281.80 fps, avg 282.19 fps, ETA 00h01m21s)Encoding: task 2 of 2, 27.89 % (281.80 fps, avg 282.19 fps, ETA 00h01m21s)Encoding: task 2 of 2, 28.04 % (281.80 fps, avg 282.19 fps, ETA 00h01m21s)Encoding: task 2 of 2, 28.20 % (281.80 fps, avg 282.19 fps, ETA 00h01m21s)Encoding: task 2 of 2, 28.40 % (281.80 fps, avg 282.19 fps, ETA 00h01m21s)Encoding: task 2 of 2, 28.56 % (276.67 fps, avg 281.64 fps, ETA 00h01m20s)Encoding: task 2 of 2, 28.71 % (276.67 fps, avg 281.64 fps, ETA 00h01m20s)[03:10:59] sync: subtitle 0xfe000000 has no duration, PTS 34144110
+Encoding: task 2 of 2, 29.02 % (276.67 fps, avg 281.64 fps, ETA 00h01m20s)Encoding: task 2 of 2, 29.22 % (276.67 fps, avg 281.64 fps, ETA 00h01m20s)Encoding: task 2 of 2, 29.37 % (276.67 fps, avg 281.64 fps, ETA 00h01m20s)Encoding: task 2 of 2, 29.58 % (289.84 fps, avg 282.74 fps, ETA 00h01m18s)Encoding: task 2 of 2, 29.78 % (289.84 fps, avg 282.74 fps, ETA 00h01m18s)Encoding: task 2 of 2, 29.93 % (289.84 fps, avg 282.74 fps, ETA 00h01m18s)[03:11:00] sync: subtitle 0xfe000000 has no duration, PTS 35472937
+Encoding: task 2 of 2, 30.08 % (289.84 fps, avg 282.74 fps, ETA 00h01m18s)Encoding: task 2 of 2, 30.28 % (289.84 fps, avg 282.74 fps, ETA 00h01m18s)[03:11:00] sync: subtitle 0xfe000000 has no duration, PTS 35828793
+Encoding: task 2 of 2, 30.44 % (289.65 fps, avg 282.86 fps, ETA 00h01m17s)Encoding: task 2 of 2, 30.64 % (289.65 fps, avg 282.86 fps, ETA 00h01m17s)Encoding: task 2 of 2, 30.84 % (289.65 fps, avg 282.86 fps, ETA 00h01m17s)[03:11:01] sync: subtitle 0xfe000000 has no duration, PTS 36621585
+Encoding: task 2 of 2, 31.04 % (289.65 fps, avg 282.86 fps, ETA 00h01m17s)Encoding: task 2 of 2, 31.20 % (289.65 fps, avg 282.86 fps, ETA 00h01m17s)Encoding: task 2 of 2, 31.36 % (297.00 fps, avg 282.99 fps, ETA 00h01m16s)Encoding: task 2 of 2, 31.52 % (297.00 fps, avg 282.99 fps, ETA 00h01m16s)Encoding: task 2 of 2, 31.67 % (297.00 fps, avg 282.99 fps, ETA 00h01m16s)Encoding: task 2 of 2, 31.82 % (297.00 fps, avg 282.99 fps, ETA 00h01m16s)Encoding: task 2 of 2, 31.97 % (297.00 fps, avg 282.99 fps, ETA 00h01m16s)Encoding: task 2 of 2, 32.17 % (270.96 fps, avg 281.73 fps, ETA 00h01m16s)Encoding: task 2 of 2, 32.33 % (270.96 fps, avg 281.73 fps, ETA 00h01m16s)Encoding: task 2 of 2, 32.48 % (270.96 fps, avg 281.73 fps, ETA 00h01m16s)Encoding: task 2 of 2, 32.63 % (270.96 fps, avg 281.73 fps, ETA 00h01m16s)Encoding: task 2 of 2, 32.83 % (270.96 fps, avg 281.73 fps, ETA 00h01m16s)Encoding: task 2 of 2, 32.98 % (264.41 fps, avg 281.31 fps, ETA 00h01m15s)[03:11:04] sync: subtitle 0xfe000000 has no duration, PTS 39159120
+Encoding: task 2 of 2, 33.14 % (264.41 fps, avg 281.31 fps, ETA 00h01m15s)Encoding: task 2 of 2, 33.29 % (264.41 fps, avg 281.31 fps, ETA 00h01m15s)Encoding: task 2 of 2, 33.44 % (264.41 fps, avg 281.31 fps, ETA 00h01m15s)Encoding: task 2 of 2, 33.64 % (264.41 fps, avg 281.31 fps, ETA 00h01m15s)Encoding: task 2 of 2, 33.79 % (264.41 fps, avg 281.31 fps, ETA 00h01m15s)Encoding: task 2 of 2, 33.95 % (256.29 fps, avg 280.81 fps, ETA 00h01m14s)Encoding: task 2 of 2, 34.15 % (256.29 fps, avg 280.81 fps, ETA 00h01m14s)Encoding: task 2 of 2, 34.30 % (256.29 fps, avg 280.81 fps, ETA 00h01m14s)Encoding: task 2 of 2, 34.50 % (256.29 fps, avg 280.81 fps, ETA 00h01m14s)[03:11:06] sync: subtitle 0xfe000000 has no duration, PTS 40848307
+Encoding: task 2 of 2, 34.66 % (256.29 fps, avg 280.81 fps, ETA 00h01m14s)Encoding: task 2 of 2, 34.86 % (264.85 fps, avg 280.40 fps, ETA 00h01m13s)Encoding: task 2 of 2, 35.01 % (264.85 fps, avg 280.40 fps, ETA 00h01m13s)[03:11:06] sync: subtitle 0xfe000000 has no duration, PTS 41436895
+Encoding: task 2 of 2, 35.21 % (264.85 fps, avg 280.40 fps, ETA 00h01m13s)Encoding: task 2 of 2, 35.36 % (264.85 fps, avg 280.40 fps, ETA 00h01m13s)[03:11:07] sync: subtitle 0xfe000000 has no duration, PTS 41902360
+Encoding: task 2 of 2, 35.52 % (264.85 fps, avg 280.40 fps, ETA 00h01m13s)Encoding: task 2 of 2, 35.72 % (266.49 fps, avg 280.18 fps, ETA 00h01m12s)Encoding: task 2 of 2, 35.87 % (266.49 fps, avg 280.18 fps, ETA 00h01m12s)[03:11:07] sync: subtitle 0xfe000000 has no duration, PTS 42560017
+Encoding: task 2 of 2, 36.07 % (266.49 fps, avg 280.18 fps, ETA 00h01m12s)Encoding: task 2 of 2, 36.23 % (266.49 fps, avg 280.18 fps, ETA 00h01m12s)Encoding: task 2 of 2, 36.38 % (266.49 fps, avg 280.18 fps, ETA 00h01m12s)Encoding: task 2 of 2, 36.58 % (271.72 fps, avg 280.13 fps, ETA 00h01m11s)Encoding: task 2 of 2, 36.78 % (271.72 fps, avg 280.13 fps, ETA 00h01m11s)Encoding: task 2 of 2, 36.93 % (271.72 fps, avg 280.13 fps, ETA 00h01m11s)[03:11:08] sync: subtitle 0xfe000000 has no duration, PTS 43588545
+Encoding: task 2 of 2, 37.09 % (271.72 fps, avg 280.13 fps, ETA 00h01m11s)Encoding: task 2 of 2, 37.24 % (271.72 fps, avg 280.13 fps, ETA 00h01m11s)Encoding: task 2 of 2, 37.39 % (271.72 fps, avg 279.76 fps, ETA 00h01m10s)Encoding: task 2 of 2, 37.59 % (271.72 fps, avg 279.76 fps, ETA 00h01m10s)Encoding: task 2 of 2, 37.74 % (271.72 fps, avg 279.76 fps, ETA 00h01m10s)Encoding: task 2 of 2, 37.95 % (271.72 fps, avg 279.76 fps, ETA 00h01m10s)Encoding: task 2 of 2, 38.10 % (271.72 fps, avg 279.76 fps, ETA 00h01m10s)Encoding: task 2 of 2, 38.30 % (274.70 fps, avg 279.79 fps, ETA 00h01m09s)Encoding: task 2 of 2, 38.45 % (274.70 fps, avg 279.79 fps, ETA 00h01m09s)Encoding: task 2 of 2, 38.66 % (274.70 fps, avg 279.79 fps, ETA 00h01m09s)Encoding: task 2 of 2, 38.86 % (274.70 fps, avg 279.79 fps, ETA 00h01m09s)Encoding: task 2 of 2, 39.01 % (274.70 fps, avg 279.79 fps, ETA 00h01m09s)Encoding: task 2 of 2, 39.16 % (275.15 fps, avg 279.78 fps, ETA 00h01m08s)Encoding: task 2 of 2, 39.31 % (275.15 fps, avg 279.78 fps, ETA 00h01m08s)Encoding: task 2 of 2, 39.47 % (275.15 fps, avg 279.78 fps, ETA 00h01m08s)Encoding: task 2 of 2, 39.67 % (275.15 fps, avg 279.78 fps, ETA 00h01m08s)Encoding: task 2 of 2, 39.82 % (275.15 fps, avg 279.78 fps, ETA 00h01m08s)Encoding: task 2 of 2, 39.97 % (270.83 fps, avg 279.16 fps, ETA 00h01m07s)[03:11:12] sync: subtitle 0xfe000000 has no duration, PTS 47397850
+Encoding: task 2 of 2, 40.18 % (270.83 fps, avg 279.16 fps, ETA 00h01m07s)Encoding: task 2 of 2, 40.33 % (270.83 fps, avg 279.16 fps, ETA 00h01m07s)[03:11:12] sync: "Chapter 3" (3) at frame 12805 time 48063015
+Encoding: task 2 of 2, 40.58 % (270.83 fps, avg 279.16 fps, ETA 00h01m07s)Encoding: task 2 of 2, 40.83 % (270.83 fps, avg 279.16 fps, ETA 00h01m07s)Encoding: task 2 of 2, 40.93 % (270.83 fps, avg 279.16 fps, ETA 00h01m07s)Encoding: task 2 of 2, 41.09 % (278.53 fps, avg 279.70 fps, ETA 00h01m06s)Encoding: task 2 of 2, 41.29 % (278.53 fps, avg 279.70 fps, ETA 00h01m06s)Encoding: task 2 of 2, 41.44 % (278.53 fps, avg 279.70 fps, ETA 00h01m06s)Encoding: task 2 of 2, 41.60 % (278.53 fps, avg 279.70 fps, ETA 00h01m06s)Encoding: task 2 of 2, 41.80 % (278.53 fps, avg 279.70 fps, ETA 00h01m06s)Encoding: task 2 of 2, 41.95 % (273.34 fps, avg 279.36 fps, ETA 00h01m05s)[03:11:14] sync: subtitle 0xfe000000 has no duration, PTS 49496947
+Encoding: task 2 of 2, 42.15 % (273.34 fps, avg 279.36 fps, ETA 00h01m05s)Encoding: task 2 of 2, 42.31 % (273.34 fps, avg 279.36 fps, ETA 00h01m05s)Encoding: task 2 of 2, 42.46 % (273.34 fps, avg 279.36 fps, ETA 00h01m05s)Encoding: task 2 of 2, 42.61 % (273.34 fps, avg 279.36 fps, ETA 00h01m05s)Encoding: task 2 of 2, 42.76 % (277.60 fps, avg 279.06 fps, ETA 00h01m04s)[03:11:15] sync: subtitle 0xfe000000 has no duration, PTS 50806255
+Encoding: task 2 of 2, 42.96 % (277.60 fps, avg 279.06 fps, ETA 00h01m04s)Encoding: task 2 of 2, 43.12 % (277.60 fps, avg 279.06 fps, ETA 00h01m04s)Encoding: task 2 of 2, 43.27 % (277.60 fps, avg 279.06 fps, ETA 00h01m04s)Encoding: task 2 of 2, 43.47 % (277.60 fps, avg 279.06 fps, ETA 00h01m04s)Encoding: task 2 of 2, 43.62 % (263.80 fps, avg 278.70 fps, ETA 00h01m04s)Encoding: task 2 of 2, 43.82 % (263.80 fps, avg 278.70 fps, ETA 00h01m04s)Encoding: task 2 of 2, 43.98 % (263.80 fps, avg 278.70 fps, ETA 00h01m04s)Encoding: task 2 of 2, 44.19 % (263.80 fps, avg 278.70 fps, ETA 00h01m04s)Encoding: task 2 of 2, 44.39 % (263.80 fps, avg 278.70 fps, ETA 00h01m04s)Encoding: task 2 of 2, 44.54 % (271.57 fps, avg 278.88 fps, ETA 00h01m02s)Encoding: task 2 of 2, 44.69 % (271.57 fps, avg 278.88 fps, ETA 00h01m02s)[03:11:17] sync: subtitle 0xfe000000 has no duration, PTS 52885833
+Encoding: task 2 of 2, 44.89 % (271.57 fps, avg 278.88 fps, ETA 00h01m02s)Encoding: task 2 of 2, 45.10 % (271.57 fps, avg 278.88 fps, ETA 00h01m02s)Encoding: task 2 of 2, 45.25 % (271.57 fps, avg 278.88 fps, ETA 00h01m02s)Encoding: task 2 of 2, 45.45 % (276.69 fps, avg 278.92 fps, ETA 00h01m01s)Encoding: task 2 of 2, 45.60 % (276.69 fps, avg 278.92 fps, ETA 00h01m01s)Encoding: task 2 of 2, 45.76 % (276.69 fps, avg 278.92 fps, ETA 00h01m01s)Encoding: task 2 of 2, 45.96 % (276.69 fps, avg 278.92 fps, ETA 00h01m01s)Encoding: task 2 of 2, 46.26 % (276.69 fps, avg 278.92 fps, ETA 00h01m01s)Encoding: task 2 of 2, 46.52 % (300.36 fps, avg 279.96 fps, ETA 00h01m00s)Encoding: task 2 of 2, 46.77 % (300.36 fps, avg 279.96 fps, ETA 00h01m00s)Encoding: task 2 of 2, 46.92 % (300.36 fps, avg 279.96 fps, ETA 00h01m00s)Encoding: task 2 of 2, 47.12 % (300.36 fps, avg 279.96 fps, ETA 00h01m00s)Encoding: task 2 of 2, 47.27 % (300.36 fps, avg 279.96 fps, ETA 00h01m00s)Encoding: task 2 of 2, 47.48 % (307.29 fps, avg 280.52 fps, ETA 00h00m59s)Encoding: task 2 of 2, 47.63 % (307.29 fps, avg 280.52 fps, ETA 00h00m59s)Encoding: task 2 of 2, 47.78 % (307.29 fps, avg 280.52 fps, ETA 00h00m59s)Encoding: task 2 of 2, 47.98 % (307.29 fps, avg 280.52 fps, ETA 00h00m59s)Encoding: task 2 of 2, 48.14 % (307.29 fps, avg 280.52 fps, ETA 00h00m59s)Encoding: task 2 of 2, 48.29 % (307.29 fps, avg 280.52 fps, ETA 00h00m59s)Encoding: task 2 of 2, 48.49 % (303.37 fps, avg 280.29 fps, ETA 00h00m58s)Encoding: task 2 of 2, 48.69 % (303.37 fps, avg 280.29 fps, ETA 00h00m58s)Encoding: task 2 of 2, 48.84 % (303.37 fps, avg 280.29 fps, ETA 00h00m58s)Encoding: task 2 of 2, 49.00 % (303.37 fps, avg 280.29 fps, ETA 00h00m58s)Encoding: task 2 of 2, 49.15 % (303.37 fps, avg 280.29 fps, ETA 00h00m58s)Encoding: task 2 of 2, 49.30 % (278.17 fps, avg 279.86 fps, ETA 00h00m57s)Encoding: task 2 of 2, 49.45 % (278.17 fps, avg 279.86 fps, ETA 00h00m57s)Encoding: task 2 of 2, 49.61 % (278.17 fps, avg 279.86 fps, ETA 00h00m57s)Encoding: task 2 of 2, 49.76 % (278.17 fps, avg 279.86 fps, ETA 00h00m57s)Encoding: task 2 of 2, 49.91 % (278.17 fps, avg 279.86 fps, ETA 00h00m57s)Encoding: task 2 of 2, 50.06 % (258.39 fps, avg 279.30 fps, ETA 00h00m56s)Encoding: task 2 of 2, 50.27 % (258.39 fps, avg 279.30 fps, ETA 00h00m56s)Encoding: task 2 of 2, 50.42 % (258.39 fps, avg 279.30 fps, ETA 00h00m56s)Encoding: task 2 of 2, 50.57 % (258.39 fps, avg 279.30 fps, ETA 00h00m56s)Encoding: task 2 of 2, 50.72 % (258.39 fps, avg 279.30 fps, ETA 00h00m56s)Encoding: task 2 of 2, 50.85 % (251.36 fps, avg 278.72 fps, ETA 00h00m55s)Encoding: task 2 of 2, 51.01 % (251.36 fps, avg 278.72 fps, ETA 00h00m55s)Encoding: task 2 of 2, 51.17 % (251.36 fps, avg 278.72 fps, ETA 00h00m55s)Encoding: task 2 of 2, 51.38 % (251.36 fps, avg 278.72 fps, ETA 00h00m55s)Encoding: task 2 of 2, 51.58 % (251.36 fps, avg 278.72 fps, ETA 00h00m55s)Encoding: task 2 of 2, 51.78 % (259.99 fps, avg 278.82 fps, ETA 00h00m54s)Encoding: task 2 of 2, 51.93 % (259.99 fps, avg 278.82 fps, ETA 00h00m54s)Encoding: task 2 of 2, 52.14 % (259.99 fps, avg 278.82 fps, ETA 00h00m54s)Encoding: task 2 of 2, 52.34 % (259.99 fps, avg 278.82 fps, ETA 00h00m54s)[03:11:26] sync: subtitle 0xfe000000 has no duration, PTS 61951890
+Encoding: task 2 of 2, 52.54 % (259.99 fps, avg 278.82 fps, ETA 00h00m54s)Encoding: task 2 of 2, 52.69 % (275.09 fps, avg 279.09 fps, ETA 00h00m53s)Encoding: task 2 of 2, 52.85 % (275.09 fps, avg 279.09 fps, ETA 00h00m53s)Encoding: task 2 of 2, 53.05 % (275.09 fps, avg 279.09 fps, ETA 00h00m53s)Encoding: task 2 of 2, 53.20 % (275.09 fps, avg 279.09 fps, ETA 00h00m53s)Encoding: task 2 of 2, 53.40 % (275.09 fps, avg 279.09 fps, ETA 00h00m53s)Encoding: task 2 of 2, 53.55 % (275.09 fps, avg 279.09 fps, ETA 00h00m53s)Encoding: task 2 of 2, 53.76 % (284.42 fps, avg 279.01 fps, ETA 00h00m52s)Encoding: task 2 of 2, 53.96 % (284.42 fps, avg 279.01 fps, ETA 00h00m52s)Encoding: task 2 of 2, 54.16 % (284.42 fps, avg 279.01 fps, ETA 00h00m52s)Encoding: task 2 of 2, 54.31 % (284.42 fps, avg 279.01 fps, ETA 00h00m52s)Encoding: task 2 of 2, 54.47 % (284.42 fps, avg 279.01 fps, ETA 00h00m52s)Encoding: task 2 of 2, 54.67 % (286.54 fps, avg 279.21 fps, ETA 00h00m51s)Encoding: task 2 of 2, 54.87 % (286.54 fps, avg 279.21 fps, ETA 00h00m51s)Encoding: task 2 of 2, 55.02 % (286.54 fps, avg 279.21 fps, ETA 00h00m51s)Encoding: task 2 of 2, 55.23 % (286.54 fps, avg 279.21 fps, ETA 00h00m51s)Encoding: task 2 of 2, 55.38 % (286.54 fps, avg 279.21 fps, ETA 00h00m51s)Encoding: task 2 of 2, 55.58 % (283.14 fps, avg 279.29 fps, ETA 00h00m50s)Encoding: task 2 of 2, 55.78 % (283.14 fps, avg 279.29 fps, ETA 00h00m50s)Encoding: task 2 of 2, 55.93 % (283.14 fps, avg 279.29 fps, ETA 00h00m50s)Encoding: task 2 of 2, 56.14 % (283.14 fps, avg 279.29 fps, ETA 00h00m50s)Encoding: task 2 of 2, 56.29 % (283.14 fps, avg 279.29 fps, ETA 00h00m50s)Encoding: task 2 of 2, 56.44 % (286.74 fps, avg 279.38 fps, ETA 00h00m49s)Encoding: task 2 of 2, 56.64 % (286.74 fps, avg 279.38 fps, ETA 00h00m49s)Encoding: task 2 of 2, 56.80 % (286.74 fps, avg 279.38 fps, ETA 00h00m49s)Encoding: task 2 of 2, 57.00 % (286.74 fps, avg 279.38 fps, ETA 00h00m49s)Encoding: task 2 of 2, 57.20 % (286.74 fps, avg 279.38 fps, ETA 00h00m49s)Encoding: task 2 of 2, 57.35 % (280.88 fps, avg 279.29 fps, ETA 00h00m48s)Encoding: task 2 of 2, 57.50 % (280.88 fps, avg 279.29 fps, ETA 00h00m48s)Encoding: task 2 of 2, 57.71 % (280.88 fps, avg 279.29 fps, ETA 00h00m48s)Encoding: task 2 of 2, 57.86 % (280.88 fps, avg 279.29 fps, ETA 00h00m48s)Encoding: task 2 of 2, 58.06 % (280.88 fps, avg 279.29 fps, ETA 00h00m48s)Encoding: task 2 of 2, 58.21 % (279.16 fps, avg 279.28 fps, ETA 00h00m47s)Encoding: task 2 of 2, 58.42 % (279.16 fps, avg 279.28 fps, ETA 00h00m47s)Encoding: task 2 of 2, 58.57 % (279.16 fps, avg 279.28 fps, ETA 00h00m47s)Encoding: task 2 of 2, 58.77 % (279.16 fps, avg 279.28 fps, ETA 00h00m47s)Encoding: task 2 of 2, 58.97 % (279.16 fps, avg 279.28 fps, ETA 00h00m47s)Encoding: task 2 of 2, 59.13 % (278.53 fps, avg 279.34 fps, ETA 00h00m46s)Encoding: task 2 of 2, 59.28 % (278.53 fps, avg 279.34 fps, ETA 00h00m46s)Encoding: task 2 of 2, 59.48 % (278.53 fps, avg 279.34 fps, ETA 00h00m46s)Encoding: task 2 of 2, 59.58 % (278.53 fps, avg 279.34 fps, ETA 00h00m46s)Encoding: task 2 of 2, 59.78 % (278.53 fps, avg 279.34 fps, ETA 00h00m46s)Encoding: task 2 of 2, 59.94 % (278.53 fps, avg 279.34 fps, ETA 00h00m46s)Encoding: task 2 of 2, 60.14 % (273.11 fps, avg 279.01 fps, ETA 00h00m45s)Encoding: task 2 of 2, 60.29 % (273.11 fps, avg 279.01 fps, ETA 00h00m45s)Encoding: task 2 of 2, 60.49 % (273.11 fps, avg 279.01 fps, ETA 00h00m45s)Encoding: task 2 of 2, 60.64 % (273.11 fps, avg 279.01 fps, ETA 00h00m45s)Encoding: task 2 of 2, 60.80 % (273.11 fps, avg 279.01 fps, ETA 00h00m45s)[03:11:35] sync: subtitle 0xfe000000 has no duration, PTS 72195123
+Encoding: task 2 of 2, 60.95 % (270.22 fps, avg 278.88 fps, ETA 00h00m44s)Encoding: task 2 of 2, 61.15 % (270.22 fps, avg 278.88 fps, ETA 00h00m44s)Encoding: task 2 of 2, 61.30 % (270.22 fps, avg 278.88 fps, ETA 00h00m44s)Encoding: task 2 of 2, 61.45 % (270.22 fps, avg 278.88 fps, ETA 00h00m44s)Encoding: task 2 of 2, 61.61 % (270.22 fps, avg 278.88 fps, ETA 00h00m44s)Encoding: task 2 of 2, 61.76 % (260.42 fps, avg 278.51 fps, ETA 00h00m43s)Encoding: task 2 of 2, 61.96 % (260.42 fps, avg 278.51 fps, ETA 00h00m43s)Encoding: task 2 of 2, 62.11 % (260.42 fps, avg 278.51 fps, ETA 00h00m43s)Encoding: task 2 of 2, 62.26 % (260.42 fps, avg 278.51 fps, ETA 00h00m43s)Encoding: task 2 of 2, 62.42 % (260.42 fps, avg 278.51 fps, ETA 00h00m43s)Encoding: task 2 of 2, 62.57 % (259.82 fps, avg 278.17 fps, ETA 00h00m42s)Encoding: task 2 of 2, 62.72 % (259.82 fps, avg 278.17 fps, ETA 00h00m42s)Encoding: task 2 of 2, 62.87 % (259.82 fps, avg 278.17 fps, ETA 00h00m42s)Encoding: task 2 of 2, 63.02 % (259.82 fps, avg 278.17 fps, ETA 00h00m42s)[03:11:38] sync: subtitle 0xfe000000 has no duration, PTS 74692117
+Encoding: task 2 of 2, 63.18 % (259.82 fps, avg 278.17 fps, ETA 00h00m42s)Encoding: task 2 of 2, 63.33 % (252.90 fps, avg 277.76 fps, ETA 00h00m41s)Encoding: task 2 of 2, 63.53 % (252.90 fps, avg 277.76 fps, ETA 00h00m41s)Encoding: task 2 of 2, 63.68 % (252.90 fps, avg 277.76 fps, ETA 00h00m41s)Encoding: task 2 of 2, 63.89 % (252.90 fps, avg 277.76 fps, ETA 00h00m41s)Encoding: task 2 of 2, 64.04 % (252.90 fps, avg 277.76 fps, ETA 00h00m41s)Encoding: task 2 of 2, 64.19 % (252.90 fps, avg 277.76 fps, ETA 00h00m41s)Encoding: task 2 of 2, 64.44 % (258.39 fps, avg 277.64 fps, ETA 00h00m40s)Encoding: task 2 of 2, 64.59 % (258.39 fps, avg 277.64 fps, ETA 00h00m40s)Encoding: task 2 of 2, 64.80 % (258.39 fps, avg 277.64 fps, ETA 00h00m40s)Encoding: task 2 of 2, 64.90 % (258.39 fps, avg 277.64 fps, ETA 00h00m40s)Encoding: task 2 of 2, 65.10 % (258.39 fps, avg 277.64 fps, ETA 00h00m40s)Encoding: task 2 of 2, 65.25 % (267.09 fps, avg 277.71 fps, ETA 00h00m39s)Encoding: task 2 of 2, 65.46 % (267.09 fps, avg 277.71 fps, ETA 00h00m39s)Encoding: task 2 of 2, 65.61 % (267.09 fps, avg 277.71 fps, ETA 00h00m39s)Encoding: task 2 of 2, 65.81 % (267.09 fps, avg 277.71 fps, ETA 00h00m39s)Encoding: task 2 of 2, 65.96 % (267.09 fps, avg 277.71 fps, ETA 00h00m39s)Encoding: task 2 of 2, 66.11 % (276.92 fps, avg 277.72 fps, ETA 00h00m38s)Encoding: task 2 of 2, 66.32 % (276.92 fps, avg 277.72 fps, ETA 00h00m38s)Encoding: task 2 of 2, 66.47 % (276.92 fps, avg 277.72 fps, ETA 00h00m38s)Encoding: task 2 of 2, 66.67 % (276.92 fps, avg 277.72 fps, ETA 00h00m38s)[03:11:42] sync: subtitle 0xfe000000 has no duration, PTS 79019440
+Encoding: task 2 of 2, 66.87 % (276.92 fps, avg 277.72 fps, ETA 00h00m38s)Encoding: task 2 of 2, 67.03 % (278.17 fps, avg 277.66 fps, ETA 00h00m37s)Encoding: task 2 of 2, 67.18 % (278.17 fps, avg 277.66 fps, ETA 00h00m37s)[03:11:43] sync: subtitle 0xfe000000 has no duration, PTS 79770190
+Encoding: task 2 of 2, 67.38 % (278.17 fps, avg 277.66 fps, ETA 00h00m37s)Encoding: task 2 of 2, 67.48 % (278.17 fps, avg 277.66 fps, ETA 00h00m37s)Encoding: task 2 of 2, 67.68 % (278.17 fps, avg 277.66 fps, ETA 00h00m37s)Encoding: task 2 of 2, 67.84 % (268.13 fps, avg 277.32 fps, ETA 00h00m36s)Encoding: task 2 of 2, 67.99 % (268.13 fps, avg 277.32 fps, ETA 00h00m36s)Encoding: task 2 of 2, 68.19 % (268.13 fps, avg 277.32 fps, ETA 00h00m36s)Encoding: task 2 of 2, 68.39 % (268.13 fps, avg 277.32 fps, ETA 00h00m36s)[03:11:45] sync: subtitle 0xfe000000 has no duration, PTS 81174093
+Encoding: task 2 of 2, 68.60 % (268.13 fps, avg 277.32 fps, ETA 00h00m36s)Encoding: task 2 of 2, 68.75 % (273.55 fps, avg 277.56 fps, ETA 00h00m35s)Encoding: task 2 of 2, 68.95 % (273.55 fps, avg 277.56 fps, ETA 00h00m35s)Encoding: task 2 of 2, 69.10 % (273.55 fps, avg 277.56 fps, ETA 00h00m35s)Encoding: task 2 of 2, 69.25 % (273.55 fps, avg 277.56 fps, ETA 00h00m35s)Encoding: task 2 of 2, 69.46 % (273.55 fps, avg 277.56 fps, ETA 00h00m35s)Encoding: task 2 of 2, 69.61 % (272.16 fps, avg 277.45 fps, ETA 00h00m34s)[03:11:46] sync: subtitle 0xfe000000 has no duration, PTS 82394812
+Encoding: task 2 of 2, 69.81 % (272.16 fps, avg 277.45 fps, ETA 00h00m34s)Encoding: task 2 of 2, 69.97 % (272.16 fps, avg 277.45 fps, ETA 00h00m34s)Encoding: task 2 of 2, 70.17 % (272.16 fps, avg 277.45 fps, ETA 00h00m34s)Encoding: task 2 of 2, 70.37 % (272.16 fps, avg 277.45 fps, ETA 00h00m34s)Encoding: task 2 of 2, 70.52 % (272.16 fps, avg 277.45 fps, ETA 00h00m34s)Encoding: task 2 of 2, 70.72 % (285.71 fps, avg 277.64 fps, ETA 00h00m33s)Encoding: task 2 of 2, 70.87 % (285.71 fps, avg 277.64 fps, ETA 00h00m33s)Encoding: task 2 of 2, 71.03 % (285.71 fps, avg 277.64 fps, ETA 00h00m33s)Encoding: task 2 of 2, 71.23 % (285.71 fps, avg 277.64 fps, ETA 00h00m33s)[03:11:48] sync: subtitle 0xfe000000 has no duration, PTS 84274690
+Encoding: task 2 of 2, 71.38 % (285.71 fps, avg 277.64 fps, ETA 00h00m33s)Encoding: task 2 of 2, 71.58 % (277.31 fps, avg 277.55 fps, ETA 00h00m32s)Encoding: task 2 of 2, 71.74 % (277.31 fps, avg 277.55 fps, ETA 00h00m32s)Encoding: task 2 of 2, 71.94 % (277.31 fps, avg 277.55 fps, ETA 00h00m32s)Encoding: task 2 of 2, 72.09 % (277.31 fps, avg 277.55 fps, ETA 00h00m32s)Encoding: task 2 of 2, 72.29 % (277.31 fps, avg 277.55 fps, ETA 00h00m32s)[03:11:49] sync: subtitle 0xfe000000 has no duration, PTS 85698112
+Encoding: task 2 of 2, 72.44 % (281.25 fps, avg 277.59 fps, ETA 00h00m31s)Encoding: task 2 of 2, 72.65 % (281.25 fps, avg 277.59 fps, ETA 00h00m31s)Encoding: task 2 of 2, 72.85 % (281.25 fps, avg 277.59 fps, ETA 00h00m31s)Encoding: task 2 of 2, 73.00 % (281.25 fps, avg 277.59 fps, ETA 00h00m31s)Encoding: task 2 of 2, 73.20 % (281.25 fps, avg 277.59 fps, ETA 00h00m31s)Encoding: task 2 of 2, 73.41 % (278.58 fps, avg 277.68 fps, ETA 00h00m30s)Encoding: task 2 of 2, 73.56 % (278.58 fps, avg 277.68 fps, ETA 00h00m30s)Encoding: task 2 of 2, 73.76 % (278.58 fps, avg 277.68 fps, ETA 00h00m30s)[03:11:50] sync: subtitle 0xfe000000 has no duration, PTS 87409822
+Encoding: task 2 of 2, 73.91 % (278.58 fps, avg 277.68 fps, ETA 00h00m30s)Encoding: task 2 of 2, 74.12 % (278.58 fps, avg 277.68 fps, ETA 00h00m30s)Encoding: task 2 of 2, 74.27 % (283.56 fps, avg 277.77 fps, ETA 00h00m29s)[03:11:51] sync: subtitle 0xfe000000 has no duration, PTS 88093005
+Encoding: task 2 of 2, 74.47 % (283.56 fps, avg 277.77 fps, ETA 00h00m29s)Encoding: task 2 of 2, 74.67 % (283.56 fps, avg 277.77 fps, ETA 00h00m29s)Encoding: task 2 of 2, 74.87 % (283.56 fps, avg 277.77 fps, ETA 00h00m29s)[03:11:52] sync: subtitle 0xfe000000 has no duration, PTS 88798710
+Encoding: task 2 of 2, 75.03 % (283.56 fps, avg 277.77 fps, ETA 00h00m29s)Encoding: task 2 of 2, 75.18 % (288.34 fps, avg 277.98 fps, ETA 00h00m28s)Encoding: task 2 of 2, 75.38 % (288.34 fps, avg 277.98 fps, ETA 00h00m28s)Encoding: task 2 of 2, 75.53 % (288.34 fps, avg 277.98 fps, ETA 00h00m28s)[03:11:52] sync: subtitle 0xfe000000 has no duration, PTS 89552463
+Encoding: task 2 of 2, 75.74 % (288.34 fps, avg 277.98 fps, ETA 00h00m28s)[03:11:53] sync: subtitle 0xfe000000 has no duration, PTS 89887297
+Encoding: task 2 of 2, 75.88 % (288.34 fps, avg 277.98 fps, ETA 00h00m28s)Encoding: task 2 of 2, 76.04 % (281.47 fps, avg 277.81 fps, ETA 00h00m27s)[03:11:53] sync: "Chapter 4" (4) at frame 24077 time 90375285
+Encoding: task 2 of 2, 76.24 % (281.47 fps, avg 277.81 fps, ETA 00h00m27s)Encoding: task 2 of 2, 76.54 % (281.47 fps, avg 277.81 fps, ETA 00h00m27s)Encoding: task 2 of 2, 76.69 % (281.47 fps, avg 277.81 fps, ETA 00h00m27s)Encoding: task 2 of 2, 76.90 % (281.47 fps, avg 277.81 fps, ETA 00h00m27s)Encoding: task 2 of 2, 77.06 % (289.92 fps, avg 278.20 fps, ETA 00h00m26s)Encoding: task 2 of 2, 77.26 % (289.92 fps, avg 278.20 fps, ETA 00h00m26s)Encoding: task 2 of 2, 77.46 % (289.92 fps, avg 278.20 fps, ETA 00h00m26s)Encoding: task 2 of 2, 77.66 % (289.92 fps, avg 278.20 fps, ETA 00h00m26s)Encoding: task 2 of 2, 77.82 % (289.92 fps, avg 278.20 fps, ETA 00h00m26s)Encoding: task 2 of 2, 77.97 % (290.39 fps, avg 278.41 fps, ETA 00h00m25s)Encoding: task 2 of 2, 78.12 % (290.39 fps, avg 278.41 fps, ETA 00h00m25s)Encoding: task 2 of 2, 78.27 % (290.39 fps, avg 278.41 fps, ETA 00h00m25s)[03:11:55] sync: subtitle 0xfe000000 has no duration, PTS 92623030
+Encoding: task 2 of 2, 78.42 % (290.39 fps, avg 278.41 fps, ETA 00h00m25s)Encoding: task 2 of 2, 78.58 % (290.39 fps, avg 278.41 fps, ETA 00h00m25s)Encoding: task 2 of 2, 78.78 % (285.62 fps, avg 278.08 fps, ETA 00h00m24s)Encoding: task 2 of 2, 78.93 % (285.62 fps, avg 278.08 fps, ETA 00h00m24s)Encoding: task 2 of 2, 79.08 % (285.62 fps, avg 278.08 fps, ETA 00h00m24s)Encoding: task 2 of 2, 79.23 % (285.62 fps, avg 278.08 fps, ETA 00h00m24s)Encoding: task 2 of 2, 79.39 % (285.62 fps, avg 278.08 fps, ETA 00h00m24s)Encoding: task 2 of 2, 79.59 % (267.45 fps, avg 277.83 fps, ETA 00h00m23s)Encoding: task 2 of 2, 79.74 % (267.45 fps, avg 277.83 fps, ETA 00h00m23s)Encoding: task 2 of 2, 79.94 % (267.45 fps, avg 277.83 fps, ETA 00h00m23s)Encoding: task 2 of 2, 80.09 % (267.45 fps, avg 277.83 fps, ETA 00h00m23s)Encoding: task 2 of 2, 80.30 % (267.45 fps, avg 277.83 fps, ETA 00h00m23s)Encoding: task 2 of 2, 80.50 % (267.45 fps, avg 277.83 fps, ETA 00h00m23s)Encoding: task 2 of 2, 80.70 % (265.19 fps, avg 277.96 fps, ETA 00h00m22s)Encoding: task 2 of 2, 80.90 % (265.19 fps, avg 277.96 fps, ETA 00h00m22s)Encoding: task 2 of 2, 81.06 % (265.19 fps, avg 277.96 fps, ETA 00h00m22s)Encoding: task 2 of 2, 81.21 % (265.19 fps, avg 277.96 fps, ETA 00h00m22s)Encoding: task 2 of 2, 81.36 % (265.19 fps, avg 277.96 fps, ETA 00h00m22s)Encoding: task 2 of 2, 81.56 % (276.58 fps, avg 278.03 fps, ETA 00h00m21s)[03:11:59] sync: subtitle 0xfe000000 has no duration, PTS 96632035
+Encoding: task 2 of 2, 81.71 % (276.58 fps, avg 278.03 fps, ETA 00h00m21s)Encoding: task 2 of 2, 81.92 % (276.58 fps, avg 278.03 fps, ETA 00h00m21s)Encoding: task 2 of 2, 82.12 % (276.58 fps, avg 278.03 fps, ETA 00h00m21s)Encoding: task 2 of 2, 82.22 % (276.58 fps, avg 278.03 fps, ETA 00h00m21s)Encoding: task 2 of 2, 82.32 % (275.24 fps, avg 277.75 fps, ETA 00h00m20s)Encoding: task 2 of 2, 82.53 % (275.24 fps, avg 277.75 fps, ETA 00h00m20s)Encoding: task 2 of 2, 82.73 % (275.24 fps, avg 277.75 fps, ETA 00h00m20s)Encoding: task 2 of 2, 82.83 % (275.24 fps, avg 277.75 fps, ETA 00h00m20s)Encoding: task 2 of 2, 82.98 % (275.24 fps, avg 277.75 fps, ETA 00h00m20s)Encoding: task 2 of 2, 83.13 % (260.93 fps, avg 277.41 fps, ETA 00h00m19s)Encoding: task 2 of 2, 83.28 % (260.93 fps, avg 277.41 fps, ETA 00h00m19s)Encoding: task 2 of 2, 83.49 % (260.93 fps, avg 277.41 fps, ETA 00h00m19s)Encoding: task 2 of 2, 83.59 % (260.93 fps, avg 277.41 fps, ETA 00h00m19s)Encoding: task 2 of 2, 83.79 % (260.93 fps, avg 277.41 fps, ETA 00h00m19s)Encoding: task 2 of 2, 83.94 % (251.39 fps, avg 277.18 fps, ETA 00h00m18s)Encoding: task 2 of 2, 84.10 % (251.39 fps, avg 277.18 fps, ETA 00h00m18s)Encoding: task 2 of 2, 84.25 % (251.39 fps, avg 277.18 fps, ETA 00h00m18s)Encoding: task 2 of 2, 84.40 % (251.39 fps, avg 277.18 fps, ETA 00h00m18s)Encoding: task 2 of 2, 84.55 % (251.39 fps, avg 277.18 fps, ETA 00h00m18s)Encoding: task 2 of 2, 84.70 % (249.19 fps, avg 276.84 fps, ETA 00h00m17s)Encoding: task 2 of 2, 84.85 % (249.19 fps, avg 276.84 fps, ETA 00h00m17s)[03:12:04] sync: subtitle 0xfe000000 has no duration, PTS 100648548
+Encoding: task 2 of 2, 84.96 % (249.19 fps, avg 276.84 fps, ETA 00h00m17s)Encoding: task 2 of 2, 85.11 % (249.19 fps, avg 276.84 fps, ETA 00h00m17s)Encoding: task 2 of 2, 85.26 % (249.19 fps, avg 276.84 fps, ETA 00h00m17s)Encoding: task 2 of 2, 85.46 % (245.03 fps, avg 276.39 fps, ETA 00h00m16s)Encoding: task 2 of 2, 85.61 % (245.03 fps, avg 276.39 fps, ETA 00h00m16s)Encoding: task 2 of 2, 85.77 % (245.03 fps, avg 276.39 fps, ETA 00h00m16s)[03:12:05] sync: subtitle 0xfe000000 has no duration, PTS 101812210
+Encoding: task 2 of 2, 85.92 % (245.03 fps, avg 276.39 fps, ETA 00h00m16s)Encoding: task 2 of 2, 86.07 % (245.03 fps, avg 276.39 fps, ETA 00h00m16s)[03:12:05] sync: subtitle 0xfe000000 has no duration, PTS 102082480
+Encoding: task 2 of 2, 86.17 % (245.03 fps, avg 276.39 fps, ETA 00h00m16s)Encoding: task 2 of 2, 86.32 % (236.66 fps, avg 275.90 fps, ETA 00h00m15s)Encoding: task 2 of 2, 86.48 % (236.66 fps, avg 275.90 fps, ETA 00h00m15s)Encoding: task 2 of 2, 86.68 % (236.66 fps, avg 275.90 fps, ETA 00h00m15s)Encoding: task 2 of 2, 86.78 % (236.66 fps, avg 275.90 fps, ETA 00h00m15s)[03:12:06] sync: subtitle 0xfe000000 has no duration, PTS 102953350
+Encoding: task 2 of 2, 86.88 % (236.66 fps, avg 275.90 fps, ETA 00h00m15s)Encoding: task 2 of 2, 87.03 % (230.03 fps, avg 275.37 fps, ETA 00h00m14s)Encoding: task 2 of 2, 87.18 % (230.03 fps, avg 275.37 fps, ETA 00h00m14s)Encoding: task 2 of 2, 87.34 % (230.03 fps, avg 275.37 fps, ETA 00h00m14s)Encoding: task 2 of 2, 87.49 % (230.03 fps, avg 275.37 fps, ETA 00h00m14s)Encoding: task 2 of 2, 87.59 % (230.03 fps, avg 275.37 fps, ETA 00h00m14s)Encoding: task 2 of 2, 87.74 % (226.49 fps, avg 274.82 fps, ETA 00h00m14s)Encoding: task 2 of 2, 87.94 % (226.49 fps, avg 274.82 fps, ETA 00h00m14s)Encoding: task 2 of 2, 88.10 % (226.49 fps, avg 274.82 fps, ETA 00h00m14s)Encoding: task 2 of 2, 88.20 % (226.49 fps, avg 274.82 fps, ETA 00h00m14s)Encoding: task 2 of 2, 88.35 % (226.49 fps, avg 274.82 fps, ETA 00h00m14s)Encoding: task 2 of 2, 88.50 % (226.49 fps, avg 274.82 fps, ETA 00h00m14s)[03:12:09] sync: subtitle 0xfe000000 has no duration, PTS 105014910
+Encoding: task 2 of 2, 88.65 % (230.14 fps, avg 274.47 fps, ETA 00h00m13s)Encoding: task 2 of 2, 88.86 % (230.14 fps, avg 274.47 fps, ETA 00h00m13s)Encoding: task 2 of 2, 89.01 % (230.14 fps, avg 274.47 fps, ETA 00h00m13s)Encoding: task 2 of 2, 89.16 % (230.14 fps, avg 274.47 fps, ETA 00h00m13s)Encoding: task 2 of 2, 89.36 % (230.14 fps, avg 274.47 fps, ETA 00h00m13s)Encoding: task 2 of 2, 89.56 % (242.27 fps, avg 274.35 fps, ETA 00h00m12s)Encoding: task 2 of 2, 89.72 % (242.27 fps, avg 274.35 fps, ETA 00h00m12s)Encoding: task 2 of 2, 89.87 % (242.27 fps, avg 274.35 fps, ETA 00h00m12s)Encoding: task 2 of 2, 90.07 % (242.27 fps, avg 274.35 fps, ETA 00h00m12s)Encoding: task 2 of 2, 90.22 % (242.27 fps, avg 274.35 fps, ETA 00h00m12s)Encoding: task 2 of 2, 90.48 % (262.46 fps, avg 274.45 fps, ETA 00h00m11s)Encoding: task 2 of 2, 90.63 % (262.46 fps, avg 274.45 fps, ETA 00h00m11s)Encoding: task 2 of 2, 90.78 % (262.46 fps, avg 274.45 fps, ETA 00h00m11s)Encoding: task 2 of 2, 90.93 % (262.46 fps, avg 274.45 fps, ETA 00h00m11s)Encoding: task 2 of 2, 91.14 % (262.46 fps, avg 274.45 fps, ETA 00h00m11s)Encoding: task 2 of 2, 91.29 % (274.67 fps, avg 274.47 fps, ETA 00h00m10s)Encoding: task 2 of 2, 91.49 % (274.67 fps, avg 274.47 fps, ETA 00h00m10s)Encoding: task 2 of 2, 91.59 % (274.67 fps, avg 274.47 fps, ETA 00h00m10s)Encoding: task 2 of 2, 91.80 % (274.67 fps, avg 274.47 fps, ETA 00h00m10s)Encoding: task 2 of 2, 91.95 % (274.67 fps, avg 274.47 fps, ETA 00h00m10s)[03:12:13] sync: subtitle 0xfe000000 has no duration, PTS 109132023
+Encoding: task 2 of 2, 92.15 % (275.92 fps, avg 274.39 fps, ETA 00h00m09s)Encoding: task 2 of 2, 92.31 % (275.92 fps, avg 274.39 fps, ETA 00h00m09s)Encoding: task 2 of 2, 92.44 % (275.92 fps, avg 274.39 fps, ETA 00h00m09s)Encoding: task 2 of 2, 92.59 % (275.92 fps, avg 274.39 fps, ETA 00h00m09s)Encoding: task 2 of 2, 92.75 % (275.92 fps, avg 274.39 fps, ETA 00h00m09s)Encoding: task 2 of 2, 92.90 % (262.43 fps, avg 274.10 fps, ETA 00h00m08s)[03:12:14] sync: subtitle 0xfe000000 has no duration, PTS 110255145
+Encoding: task 2 of 2, 93.10 % (262.43 fps, avg 274.10 fps, ETA 00h00m08s)Encoding: task 2 of 2, 93.25 % (262.43 fps, avg 274.10 fps, ETA 00h00m08s)Encoding: task 2 of 2, 93.45 % (262.43 fps, avg 274.10 fps, ETA 00h00m08s)Encoding: task 2 of 2, 93.61 % (262.43 fps, avg 274.10 fps, ETA 00h00m08s)Encoding: task 2 of 2, 93.76 % (259.28 fps, avg 274.04 fps, ETA 00h00m07s)Encoding: task 2 of 2, 93.96 % (259.28 fps, avg 274.04 fps, ETA 00h00m07s)[03:12:15] sync: subtitle 0xfe000000 has no duration, PTS 111523912
+Encoding: task 2 of 2, 94.18 % (259.28 fps, avg 274.04 fps, ETA 00h00m07s)Encoding: task 2 of 2, 94.37 % (259.28 fps, avg 274.04 fps, ETA 00h00m07s)Encoding: task 2 of 2, 94.57 % (259.28 fps, avg 274.04 fps, ETA 00h00m07s)Encoding: task 2 of 2, 94.72 % (270.15 fps, avg 274.27 fps, ETA 00h00m06s)Encoding: task 2 of 2, 94.87 % (270.15 fps, avg 274.27 fps, ETA 00h00m06s)Encoding: task 2 of 2, 95.02 % (270.15 fps, avg 274.27 fps, ETA 00h00m06s)Encoding: task 2 of 2, 95.23 % (270.15 fps, avg 274.27 fps, ETA 00h00m06s)Encoding: task 2 of 2, 95.38 % (270.15 fps, avg 274.27 fps, ETA 00h00m06s)Encoding: task 2 of 2, 95.53 % (270.15 fps, avg 274.27 fps, ETA 00h00m06s)Encoding: task 2 of 2, 95.74 % (275.92 fps, avg 274.15 fps, ETA 00h00m05s)[03:12:17] sync: subtitle 0xfe000000 has no duration, PTS 113626012
+Encoding: task 2 of 2, 95.89 % (275.92 fps, avg 274.15 fps, ETA 00h00m05s)Encoding: task 2 of 2, 96.04 % (275.92 fps, avg 274.15 fps, ETA 00h00m05s)[03:12:17] sync: subtitle 0xfe000000 has no duration, PTS 113981868
+Encoding: task 2 of 2, 96.19 % (275.92 fps, avg 274.15 fps, ETA 00h00m05s)Encoding: task 2 of 2, 96.39 % (275.92 fps, avg 274.15 fps, ETA 00h00m05s)Encoding: task 2 of 2, 96.55 % (274.31 fps, avg 274.05 fps, ETA 00h00m04s)Encoding: task 2 of 2, 96.75 % (274.31 fps, avg 274.05 fps, ETA 00h00m04s)[03:12:18] sync: subtitle 0xfe000000 has no duration, PTS 114759645
+Encoding: task 2 of 2, 96.90 % (274.31 fps, avg 274.05 fps, ETA 00h00m04s)Encoding: task 2 of 2, 97.10 % (274.31 fps, avg 274.05 fps, ETA 00h00m04s)[03:12:19] sync: "Chapter 5" (5) at frame 30733 time 115360245
+Encoding: task 2 of 2, 97.30 % (274.31 fps, avg 274.05 fps, ETA 00h00m04s)Encoding: task 2 of 2, 97.66 % (279.84 fps, avg 274.43 fps, ETA 00h00m02s)Encoding: task 2 of 2, 98.12 % (279.84 fps, avg 274.43 fps, ETA 00h00m02s)Encoding: task 2 of 2, 98.62 % (279.84 fps, avg 274.43 fps, ETA 00h00m02s)Encoding: task 2 of 2, 99.03 % (279.84 fps, avg 274.43 fps, ETA 00h00m02s)Encoding: task 2 of 2, 99.43 % (279.84 fps, avg 274.43 fps, ETA 00h00m02s)Encoding: task 2 of 2, 99.79 % (418.99 fps, avg 278.06 fps, ETA 00h00m00s)[03:12:20] reader: done. 2 scr changes
+[03:12:20] sync: "Chapter 6" (6) at frame 31615 time 118670301
+Encoding: task 2 of 2, 100.00 % (418.99 fps, avg 278.06 fps, ETA 00h00m00s)[03:12:20] work: average encoding speed for job is 278.063538 fps
+Encoding: task 2 of 2, 100.00 % (418.99 fps, avg 278.06 fps, ETA 00h00m00s)[03:12:20] comb detect: heavy 1055 | light 3308 | uncombed 27252 | total 31615
+[03:12:20] decomb: deinterlaced 1055 | blended 3308 | unfiltered 27252 | total 31615
+[03:12:20] vfr: 31615 frames output, 0 dropped and 0 duped for CFR/PFR
+[03:12:20] vfr: lost time: 0 (0 frames)
+[03:12:20] vfr: gained time: 0 (0 frames) (0 not accounted for)
+[03:12:20] ac3-decoder done: 41205 frames, 0 decoder errors
+[03:12:20] ac3-decoder done: 41205 frames, 0 decoder errors
+[03:12:20] ac3-decoder done: 41205 frames, 0 decoder errors
+[03:12:20] mpeg2video-decoder done: 31615 frames, 0 decoder errors
+[03:12:20] sync: got 31615 frames, 31594 expected
+[03:12:20] sync: framerate min 23.976 fps, max 29.970 fps, avg 23.976 fps
+x264 [info]: frame I:486   Avg QP:17.04  size: 43649
+x264 [info]: frame P:8705  Avg QP:20.43  size: 11279
+x264 [info]: frame B:22424 Avg QP:22.88  size:  3100
+x264 [info]: consecutive B-frames:  3.3%  2.8% 10.9% 83.0%
+x264 [info]: mb I  I16..4: 10.6% 74.0% 15.4%
+x264 [info]: mb P  I16..4:  1.4%  7.6%  1.5%  P16..4: 42.1% 20.8% 11.9%  0.0%  0.0%    skip:14.7%
+x264 [info]: mb B  I16..4:  0.1%  0.6%  0.1%  B16..8: 47.8%  6.1%  1.2%  direct: 2.5%  skip:41.6%  L0:43.0% L1:46.3% BI:10.8%
+x264 [info]: 8x8 transform intra:72.5% inter:81.8%
+x264 [info]: coded y,uvDC,uvAC intra: 76.8% 84.5% 59.9% inter: 20.8% 28.2% 3.2%
+x264 [info]: i16 v,h,dc,p: 53% 15%  4% 28%
+x264 [info]: i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 15% 16%  5%  7% 10%  7%  9%  7%
+x264 [info]: i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 31% 16% 10%  5%  9% 10%  7%  7%  5%
+x264 [info]: i8c dc,h,v,p: 47% 18% 26%  9%
+x264 [info]: Weighted P-Frames: Y:2.0% UV:1.1%
+x264 [info]: ref P L0: 57.9% 15.6% 19.0%  7.4%  0.1%
+x264 [info]: ref B L0: 89.3%  8.8%  1.9%
+x264 [info]: ref B L1: 96.1%  3.9%
+x264 [info]: kb/s:1146.14
+[03:12:20] mux: track 0, 31615 frames, 188893293 bytes, 1146.02 kbps, fifo 2048
+[03:12:20] mux: track 1, 41205 frames, 31645440 bytes, 191.99 kbps, fifo 4096
+[03:12:20] mux: track 2, 41205 frames, 31645440 bytes, 191.99 kbps, fifo 4096
+[03:12:20] mux: track 3, 41205 frames, 31645440 bytes, 191.99 kbps, fifo 4096
+[03:12:20] mux: track 4, 366 frames, 939704 bytes, 5.70 kbps, fifo 32
+[03:12:20] mux: track 5, 350 frames, 939704 bytes, 5.70 kbps, fifo 32
+[03:12:20] mux: track 6, 380 frames, 837308 bytes, 5.08 kbps, fifo 32
+[03:12:20] mux: track 7, 380 frames, 837308 bytes, 5.08 kbps, fifo 32
+[03:12:20] mux: track 8, 16 frames, 22628 bytes, 0.14 kbps, fifo 8
+[03:12:20] mux: track 9, 16 frames, 22628 bytes, 0.14 kbps, fifo 8
+[03:12:20] mux: track 10, 21 frames, 32152 bytes, 0.20 kbps, fifo 8
+[03:12:20] mux: track 11, 21 frames, 32152 bytes, 0.20 kbps, fifo 8
+[03:12:20] mux: track 12, 322 frames, 41490 bytes, 0.25 kbps, fifo 32
+[03:12:20] Finished work at: Sun Dec 28 03:12:20 2025
+
+[03:12:20] libhb: work result = 0
+
+Encode done!
+HandBrake has exited.
+

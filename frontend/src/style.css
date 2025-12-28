@@ -3,7 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+#root {
+    height: 100vh;
+    width: 100%;
+}
+
 body {
+    height: 100vh;
+    width: 100%;
     margin: 0;
     font-family:
         "Nunito",
@@ -18,6 +25,13 @@ body {
         "Droid Sans",
         "Helvetica Neue",
         sans-serif;
+}
+
+/* Force GPU Layer Promotion */
+.performance-boost {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
 }
 
 @font-face {
@@ -145,10 +159,10 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+    body {
+        @apply bg-background text-foreground;
     }
 }
