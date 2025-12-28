@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import { Terminal } from "xterm";
-import { EventsOn } from "../../../wailsjs/runtime";
-import "@xterm/xterm/css/xterm.css";
+import { EventsOn } from "@wails/runtime";
+import { Drive } from "@/types";
 
-export default function LogTerminal({ driveId }: { driveId: string }) {
+export default function LogTerminal({ drive }: { drive: Drive }) {
   const terminalRef = useRef<HTMLDivElement>(null);
   const xterm = useRef<Terminal | null>(null);
 
@@ -23,9 +23,8 @@ export default function LogTerminal({ driveId }: { driveId: string }) {
 
     xterm.current.open(terminalRef.current);
 
-    // 3. Listen for Wails events specific to this drive
     const quitListening = EventsOn("log-update", (data) => {
-      if (data.driveId === driveId) {
+      if (data.driveId === drive.device) {
         xterm.current?.write(data.message);
       }
     });
@@ -34,10 +33,10 @@ export default function LogTerminal({ driveId }: { driveId: string }) {
       quitListening();
       xterm.current?.dispose();
     };
-  }, [driveId]);
+  }, [drive]);
 
   return (
-    <div className="rounded-md border border-zinc-800 overflow-hidden">
+    <div className="rounded-md border border-zinc-800 overflow-hidden size-full">
       <div
         ref={terminalRef}
         className="p-2 bg-[#09090b]"
