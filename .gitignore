@@ -57,6 +57,7 @@ chrome-user-data
 *.swp
 *.swo
 /tmp
+.zed
 
 packages/react-devtools-core/dist
 packages/react-devtools-extensions/chrome/build
