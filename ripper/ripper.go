@@ -129,24 +129,17 @@ func ExecuteJobs(jobs map[string][]Job, onLog func(driveId, message string)) err
 			pr, pw, _ := os.Pipe()
 			logFinished := make(chan bool)
 
-			// The "Raw Chunk" Interceptor
 			go func() {
-				// Use a buffer for reading. 4096 is standard.
 				buf := make([]byte, 4096)
 				for {
 					n, err := pr.Read(buf)
 					if n > 0 {
-						// 1. Write exactly what we read to the log file
 						logFile.Write(buf[:n])
-
-						// 2. Send the raw string chunk to Wails/xterm.js
-						// This includes the \r that xterm needs for progress bars!
 						if onLog != nil {
 							onLog(device, string(buf[:n]))
 						}
 					}
 					if err != nil {
-						// EOF reached when pw.Close() is called
 						break
 					}
 				}
@@ -155,8 +148,6 @@ func ExecuteJobs(jobs map[string][]Job, onLog func(driveId, message string)) err
 
 			for _, job := range jobs {
 				logger.Info("Worker started job", "device", device, "job_id", job.ID, "name", job.Name)
-
-				// Handbrake/MakeMKV write raw ANSI codes to the pipe here
 				if err := job.Cmd(pw); err != nil {
 					logger.Error("Error while transcoding", "device", device, "job_id", job.ID, "error", err)
 					jobError = fmt.Errorf("transcoding failed on %s", device)
@@ -166,10 +157,8 @@ func ExecuteJobs(jobs map[string][]Job, onLog func(driveId, message string)) err
 				logger.Info("Worker finished job", "device", device, "job_id", job.ID)
 			}
 
-			// Closing the writer triggers EOF in the reading goroutine
 			pw.Close()
 
-			// Wait for the reading goroutine to finish flushing the last bytes
 			<-logFinished
 			pr.Close()
 		}(device, jobList, &workerGroup)
@@ -243,4 +232,8 @@ func makeBlurayRip(device, filename string, appConfig *config.Config, title int)
 		return nil
 	}
 	return command
+}
+
+func makeCdRip() {
+	
 }
