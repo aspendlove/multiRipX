@@ -47,6 +47,8 @@ func InitializeConfig() error {
 		Output: OutputConfig{
 			ShowsFilenameTemplate:  "S{season}E{episode} - {title}",
 			MoviesFilenameTemplate: "{title}",
+			CDFolderTemplate: "%A - %d",
+			CDFilenameTemplate: "%t - %n",
 		},
 		MakeMKV: MakeMKVConfig{
 			ScratchDir: "",
