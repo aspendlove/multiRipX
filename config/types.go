@@ -42,6 +42,7 @@ type Movie struct {
 
 type CD struct {
 	Musicbrainz string `yaml:"musicbrainz"`
+	Offset      int    `yaml:"offset"`
 }
 
 type DiscType string
@@ -58,7 +59,7 @@ type JobDefinition struct {
 	OutputDir string   `yaml:"output_dir,omitempty"`
 	Shows     []Show   `yaml:"shows,omitempty"`
 	Movies    []Movie  `yaml:"movies,omitempty"`
-	CD        []CD     `yaml:"cd,omitempty"`
+	CD        []CD     `yaml:"cds,omitempty"`
 }
 
 type JobsConfig struct {

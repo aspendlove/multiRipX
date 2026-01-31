@@ -60,7 +60,7 @@ func GetJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) (map[strin
 			}
 			outputPath := filepath.Join(outputDir, filename+".mkv")
 
-			cmd, err := makeRip(driveJob.Drive, outputPath, "", appConfig, show.Title, driveJob.DiscType)
+			cmd, err := makeRip(driveJob.Drive, outputPath, "", appConfig, show.Title, driveJob.DiscType, 0)
 			if err != nil {
 				logger.Error("Could not generate job, skipping", "error", err)
 				continue
@@ -86,7 +86,7 @@ func GetJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) (map[strin
 			}
 			outputPath := filepath.Join(outputDir, filename+".mkv")
 
-			cmd, err := makeRip(driveJob.Drive, outputPath, "", appConfig, movie.Title, driveJob.DiscType)
+			cmd, err := makeRip(driveJob.Drive, outputPath, "", appConfig, movie.Title, driveJob.DiscType, 0)
 			if err != nil {
 				logger.Error("Could not generate job, skipping", "error", err)
 				continue
@@ -98,10 +98,11 @@ func GetJobs(appConfig *config.Config, jobsConfig *config.JobsConfig) (map[strin
 				Cmd:    cmd,
 			})
 		}
-		if len(driveJob.CD) == 1 {
+		if len(driveJob.CD) > 0 {
 			job := driveJob.CD[0]
+			fmt.Printf("%s\n", job.Musicbrainz)
 
-			cmd, err := makeRip(driveJob.Drive, driveJob.OutputDir, job.Musicbrainz, appConfig, 0, driveJob.DiscType)
+			cmd, err := makeRip(driveJob.Drive, driveJob.OutputDir, job.Musicbrainz, appConfig, 0, driveJob.DiscType, job.Offset)
 			if err != nil {
 				logger.Error("Could not generate job, skipping", "error", err)
 				continue
@@ -182,14 +183,14 @@ func ExecuteJobs(jobs map[string][]Job, onLog func(driveId, message string)) err
 	workerGroup.Wait()
 	return jobError
 }
-func makeRip(device, filename, musicbrainzId string, appConfig *config.Config, title int, diskType config.DiscType) (JobExec, error) {
+func makeRip(device, filename, musicbrainzId string, appConfig *config.Config, title int, diskType config.DiscType, offset int) (JobExec, error) {
 	switch diskType {
 	case config.DVD:
 		return makeDvdRip(device, filename, appConfig, title), nil
 	case config.Bluray:
 		return makeBlurayRip(device, filename, appConfig, title), nil
 	case config.CD_Disc:
-		return makeCdRip(device, musicbrainzId, appConfig), nil
+		return makeCdRip(device, musicbrainzId, filename, appConfig, offset), nil
 	}
 	return nil, fmt.Errorf("Invalid Disk Type")
 }
@@ -251,16 +252,21 @@ func makeBlurayRip(device, filename string, appConfig *config.Config, title int)
 	return command
 }
 
-func makeCdRip(device, musicbrainzId string, appConfig *config.Config) JobExec {
+func makeCdRip(device, musicbrainzId, outputDir string, appConfig *config.Config, offset int) JobExec {
 	args := []string{
 		"cd",
 		"--device", device,
 		"rip",
-		"--output-directory", ".",
+		"--output-directory", outputDir,
 		"--cover-art", "complete",
 		"--disc-template", appConfig.Output.CDFolderTemplate,
 		"--track-template", appConfig.Output.CDFilenameTemplate,
+		"--offset", strconv.Itoa(offset),
 	}
+
+	// offsetArgs := []string{
+	// 	"offset", "find", "-d", device,
+	// }
 
 	if musicbrainzId != "" {
 		args = append(args, "--release-id", musicbrainzId)
@@ -269,9 +275,14 @@ func makeCdRip(device, musicbrainzId string, appConfig *config.Config) JobExec {
 	}
 
 	return func(file *os.File) error {
+		// offsetCmd := exec.Command("whipper", offsetArgs...)
 		cmd := exec.Command("whipper", args...)
+		fmt.Printf("%#v\n", cmd)
+		// offsetCmd.Stdout = file
+		// offsetCmd.Stderr = file
 		cmd.Stdout = file
 		cmd.Stderr = file
+		// offsetCmd.Run()
 		return cmd.Run()
 	}
 }

@@ -1,6 +1,7 @@
 jobs:
   - drive: /dev/sr0
     disc_type: cd
-    output_dir: /home/example/Music
+    output_dir: /home/aspendlove/Downloads
     cds:
       - musicbrainz: ""
+      - offset: 102

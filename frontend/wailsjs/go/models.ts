@@ -2,6 +2,7 @@ export namespace config {
 	
 	export class CD {
 	    Musicbrainz: string;
+	    Offset: number;
 	
 	    static createFrom(source: any = {}) {
 	        return new CD(source);
@@ -10,6 +11,7 @@ export namespace config {
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.Musicbrainz = source["Musicbrainz"];
+	        this.Offset = source["Offset"];
 	    }
 	}
 	export class Movie {
