@@ -1,0 +1,6 @@
+jobs:
+  - drive: /dev/sr0
+    disc_type: cd
+    output_dir: /home/example/Music
+    cds:
+      - musicbrainz: ""

@@ -17,8 +17,13 @@ jobs:
         episode: 3
         title: 3
   - drive: /dev/sr1
-    disc_type: bluray # Important for bluray rips
+    disc_type: bluray
     output_dir: /home/example/Movies
     movies:
       - name: "Movie"
         title: 1
+  - drive: /dev/sr2
+    disc_type: cd
+    output_dir: /home/example/Music
+    cds:
+      - musicbrainz: ""

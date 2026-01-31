@@ -1,8 +1,20 @@
 export namespace config {
 	
+	export class CD {
+	    Musicbrainz: string;
+	
+	    static createFrom(source: any = {}) {
+	        return new CD(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.Musicbrainz = source["Musicbrainz"];
+	    }
+	}
 	export class Movie {
-	    name: string;
-	    title: number;
+	    Name: string;
+	    Title: number;
 	
 	    static createFrom(source: any = {}) {
 	        return new Movie(source);
@@ -10,15 +22,15 @@ export namespace config {
 	
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
-	        this.name = source["name"];
-	        this.title = source["title"];
+	        this.Name = source["Name"];
+	        this.Title = source["Title"];
 	    }
 	}
 	export class Show {
-	    name: string;
-	    season: number;
-	    episode: number;
-	    title: number;
+	    Name: string;
+	    Season: number;
+	    Episode: number;
+	    Title: number;
 	
 	    static createFrom(source: any = {}) {
 	        return new Show(source);
@@ -26,18 +38,19 @@ export namespace config {
 	
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
-	        this.name = source["name"];
-	        this.season = source["season"];
-	        this.episode = source["episode"];
-	        this.title = source["title"];
+	        this.Name = source["Name"];
+	        this.Season = source["Season"];
+	        this.Episode = source["Episode"];
+	        this.Title = source["Title"];
 	    }
 	}
 	export class JobDefinition {
-	    drive: string;
-	    discType: string;
-	    outputDir: string;
-	    shows: Show[];
-	    movies: Movie[];
+	    Drive: string;
+	    DiscType: string;
+	    OutputDir: string;
+	    Shows: Show[];
+	    Movies: Movie[];
+	    CD: CD[];
 	
 	    static createFrom(source: any = {}) {
 	        return new JobDefinition(source);
@@ -45,11 +58,12 @@ export namespace config {
 	
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
-	        this.drive = source["drive"];
-	        this.discType = source["discType"];
-	        this.outputDir = source["outputDir"];
-	        this.shows = this.convertValues(source["shows"], Show);
-	        this.movies = this.convertValues(source["movies"], Movie);
+	        this.Drive = source["Drive"];
+	        this.DiscType = source["DiscType"];
+	        this.OutputDir = source["OutputDir"];
+	        this.Shows = this.convertValues(source["Shows"], Show);
+	        this.Movies = this.convertValues(source["Movies"], Movie);
+	        this.CD = this.convertValues(source["CD"], CD);
 	    }
 	
 		convertValues(a: any, classs: any, asMap: boolean = false): any {
@@ -71,8 +85,8 @@ export namespace config {
 		}
 	}
 	export class JobsConfig {
-	    outputDir: string;
-	    jobs: JobDefinition[];
+	    OutputDir: string;
+	    Jobs: JobDefinition[];
 	
 	    static createFrom(source: any = {}) {
 	        return new JobsConfig(source);
@@ -80,8 +94,8 @@ export namespace config {
 	
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
-	        this.outputDir = source["outputDir"];
-	        this.jobs = this.convertValues(source["jobs"], JobDefinition);
+	        this.OutputDir = source["OutputDir"];
+	        this.Jobs = this.convertValues(source["Jobs"], JobDefinition);
 	    }
 	
 		convertValues(a: any, classs: any, asMap: boolean = false): any {
