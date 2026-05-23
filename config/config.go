@@ -11,7 +11,6 @@ import (
 const configDirName = "multiRip"
 const configFileName = "config.yml"
 
-// GetConfigFilePath returns the platform-specific path for the config.yml file.
 func GetConfigFilePath() (string, error) {
 	configDir, err := os.UserConfigDir()
 	if err != nil {
@@ -20,7 +19,6 @@ func GetConfigFilePath() (string, error) {
 	return filepath.Join(configDir, configDirName, configFileName), nil
 }
 
-// InitializeConfig creates a default config.yml file in the user's config directory.
 func InitializeConfig() error {
 	path, err := GetConfigFilePath()
 	if err != nil {
@@ -47,8 +45,8 @@ func InitializeConfig() error {
 		Output: OutputConfig{
 			ShowsFilenameTemplate:  "S{season}E{episode} - {title}",
 			MoviesFilenameTemplate: "{title}",
-			CDFolderTemplate: "%A - %d",
-			CDFilenameTemplate: "%t - %n",
+			CDFolderTemplate:       "%A - %d",
+			CDFilenameTemplate:     "%t - %n",
 		},
 		MakeMKV: MakeMKVConfig{
 			ScratchDir: "",
@@ -73,7 +71,6 @@ func InitializeConfig() error {
 	return nil
 }
 
-// LoadConfig reads and parses the config.yml file.
 func LoadConfig() (*Config, error) {
 	path, err := GetConfigFilePath()
 	if err != nil {
@@ -93,7 +90,6 @@ func LoadConfig() (*Config, error) {
 	return &cfg, nil
 }
 
-// LoadJobs reads and parses the jobs.yml file from the given path.
 func LoadJobs(path string) (*JobsConfig, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {

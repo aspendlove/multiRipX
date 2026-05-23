@@ -8,7 +8,6 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-// VerifyConfig loads and validates the configuration.
 func VerifyConfig() error {
 	cfg, err := LoadConfig()
 	if err != nil {
@@ -25,7 +24,6 @@ func VerifyConfig() error {
 	fmt.Println("Verifying paths...")
 	valid := true
 
-	// Check HandBrake binary
 	if err := checkExecutable(cfg.Handbrake.Binary); err != nil {
 		fmt.Printf("  - Handbrake Binary: %s (Error: %v)\n", cfg.Handbrake.Binary, err)
 		valid = false
@@ -33,7 +31,6 @@ func VerifyConfig() error {
 		fmt.Printf("  - Handbrake Binary: %s (OK)\n", cfg.Handbrake.Binary)
 	}
 
-	// Check bluray preset file
 	if err := checkFile(cfg.Handbrake.Bluray.Preset); err != nil {
 		fmt.Printf("  - Preset File: %s (Error: %v)\n", cfg.Handbrake.Bluray.Preset, err)
 		valid = false
@@ -41,7 +38,6 @@ func VerifyConfig() error {
 		fmt.Printf("  - Preset File: %s (OK)\n", cfg.Handbrake.Bluray.Preset)
 	}
 
-	// Check dvd preset file
 	if err := checkFile(cfg.Handbrake.DVD.Preset); err != nil {
 		fmt.Printf("  - Preset File: %s (Error: %v)\n", cfg.Handbrake.DVD.Preset, err)
 		valid = false
@@ -49,7 +45,6 @@ func VerifyConfig() error {
 		fmt.Printf("  - Preset File: %s (OK)\n", cfg.Handbrake.DVD.Preset)
 	}
 
-	// Check scratch directory
 	if cfg.MakeMKV.ScratchDir != "" {
 		if err := checkDirectory(cfg.MakeMKV.ScratchDir); err != nil {
 			fmt.Printf("  - Scratch Directory: %s (Error: %v)\n", cfg.MakeMKV.ScratchDir, err)
@@ -82,24 +77,21 @@ func checkFile(path string) error {
 }
 
 func checkExecutable(path string) error {
-	// First, try to stat the file directly.
 	info, err := os.Stat(path)
 	if err == nil {
 		if info.IsDir() {
 			return fmt.Errorf("path is a directory, not a file")
 		}
-		// On Unix-like systems, check for execute permissions.
 		if info.Mode().Perm()&0111 != 0 {
-			return nil // File exists and is executable.
+			return nil
 		}
 	}
 
-	// If stat fails or it's not executable, check the system PATH.
 	if _, err := exec.LookPath(path); err != nil {
 		return fmt.Errorf("not found in PATH and not an executable file")
 	}
 
-	return nil // Found in PATH.
+	return nil
 }
 
 func checkDirectory(path string) error {

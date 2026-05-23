@@ -1,52 +1,15 @@
 package main
 
 import (
-	"embed"
 	"fmt"
 	"log"
 	"multiRip/config"
 	"multiRip/ripper"
 	"os"
-
-	"github.com/wailsapp/wails/v2"
-	"github.com/wailsapp/wails/v2/pkg/options"
-	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
 )
 
-//go:embed all:frontend/dist
-var assets embed.FS
-
 func main() {
-	startGui := func() {
-		appConfig, err := config.LoadConfig()
-		if err != nil {
-			return
-		}
-		app := NewApp(appConfig)
-
-		err = wails.Run(&options.App{
-			Title:  "MultiRip",
-			Width:  1024,
-			Height: 768,
-			AssetServer: &assetserver.Options{
-				Assets: assets,
-			},
-			OnStartup: app.startup,
-			Bind: []any{
-				app,
-			},
-		})
-
-		if err != nil {
-			println("Error:", err.Error())
-		}
-	}
-
 	args := os.Args[1:]
-	if len(args) == 0 {
-		startGui()
-		return
-	}
 
 	command := args[0]
 	switch command {

@@ -264,10 +264,6 @@ func makeCdRip(device, musicbrainzId, outputDir string, appConfig *config.Config
 		"--offset", strconv.Itoa(offset),
 	}
 
-	// offsetArgs := []string{
-	// 	"offset", "find", "-d", device,
-	// }
-
 	if musicbrainzId != "" {
 		args = append(args, "--release-id", musicbrainzId)
 	} else {
@@ -275,14 +271,10 @@ func makeCdRip(device, musicbrainzId, outputDir string, appConfig *config.Config
 	}
 
 	return func(file *os.File) error {
-		// offsetCmd := exec.Command("whipper", offsetArgs...)
 		cmd := exec.Command("whipper", args...)
 		fmt.Printf("%#v\n", cmd)
-		// offsetCmd.Stdout = file
-		// offsetCmd.Stderr = file
 		cmd.Stdout = file
 		cmd.Stderr = file
-		// offsetCmd.Run()
 		return cmd.Run()
 	}
 }

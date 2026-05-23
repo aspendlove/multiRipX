@@ -5,7 +5,8 @@
             "AudioCopyMask": [],
             "AudioEncoderFallback": "ac3",
             "AudioLanguageList": [
-                "any"
+                "eng",
+		"spa"
             ],
             "AudioList": [
                 {
